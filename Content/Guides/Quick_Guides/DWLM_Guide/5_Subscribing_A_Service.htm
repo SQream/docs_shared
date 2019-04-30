@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body>
+        <h3>Subscribing A Service</h3>
+        <p>When a SQream instance is subscribed to a service/s it can serve the connections of the service/s.</p>
+        <h4>Initial configuration:</h4>
+        <p>Define the parameter <code>initialSubscribedServices</code> in the instance configuration flag.</p>
+        <p>The parameter can be defined with multiple services.</p>
+        <p class="example">For example:</p>
+        <div class="code"><pre>"runtimeGlobalFlags": {
+	"initialSubscribedServices" : "etl,management"
+}
+</pre>
+        </div>
+        <h4>Online subscription:</h4>
+        <p>Use the utility function <span class="codeCH">subscribe_service()</span> with the relevant instance_id and service name. The instance ID can either be found in the instance configuration file, or by using the utility function <span class="codeCH">show_subscribed_instances()</span> (see <a href="7_Monitoring_Services.htm#MonitoringServices">Monitoring Services</a>).</p>
+        <p class="example">For example:</p>
+        <div class="code"><pre>Select subscribe_service(‘node_11’,’etl’);</pre>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+        <link href="../../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h2>Comparing import methods</h2>
+        <p>The following table summarizes the advantages and limitations of each method.</p>
+        <table style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+            <thead>
+                <tr class="TableStyle-Default_Table-Head-Header1">
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>Command</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>Advantages</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadD-Column1-Header1">
+                        <p>Limitations</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p>COPY
+ FROM  </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <ul>
+                            <li>Easy to use</li>
+                            <li>Can skip
+ rows, such a header row as part of command</li>
+                            <li>Can perform
+ date format transformations as part of command</li>
+                            <li>Error
+ handling options</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <ul>
+                            <li>Local data
+ only (or accessible locally via NFS)</li>
+                            <li>Cannot
+ perform any data manipulations other than date format</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p>External
+ Tables</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <ul>
+                            <li>Most powerful method</li>
+                            <li>Full range of data
+ transformations and manipulations </li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <ul>
+                            <li>Local data only (or
+ accessible locally via NFS)</li>
+                            <li>No error handling options </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <p>Data  Streaming
+  </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <ul>
+                            <li>Can access
+ remote data</li>
+                            <li>Can insert
+ directly from another database</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                        <ul>
+                            <li>Requires
+ external data manipulations   before
+ streaming</li>
+                            <li>Requires 3rd
+  party tool for ETL with SQream connectors or coding </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>So <a href="3_Choosing_the_import_method.htm">which import method</a> is the right one for you?</p>
+    </body>
+</html>

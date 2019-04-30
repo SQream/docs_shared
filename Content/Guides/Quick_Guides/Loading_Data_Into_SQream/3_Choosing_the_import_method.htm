@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+        <link href="../../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h2>Choosing the import method that is right for you</h2>
+        <p>To select the method that is right for you, answer the following 3 questions:</p>
+        <ul>
+            <li>What format is your data in?</li>
+            <li>Where is your data?</li>
+            <li>Do you need to perform data transformation while importing your data?</li>
+        </ul>
+        <h3>What format is your data in?</h3>
+        <h4 class="Quick">csv file</h4>
+        <p>csv files are supported by all 3 methods.</p>
+        <h4 class="Quick">Apache Parquet file</h4>
+        <p>Apache Parquet files are supported only by the <span class="Strong">External Table</span> method.</p>
+        <h4 class="Quick">All other file types</h4>
+        <p>If your data is not in either a csv file or an Apache Parquet file, you must use the <span class="Strong">Data Streaming</span> method to import your data.</p>
+        <h4 class="Quick">Other data sources</h4>
+        <p>If you are importing from a different data source, such as a database or streaming software, you must use the <span class="Strong">Data Streaming</span> method to import your data.</p>
+        <h3>Where is your data?</h3>
+        <h4 class="Quick">Local</h4>
+        <p>If your data is in a local file location, you can use any method.</p>
+        <h4 class="Quick">Remote</h4>
+        <p>If your data is in a remote location, you must use the <span class="Strong">Data Streaming</span> method</p>
+        <h3>Do you need to manipulate the data in any way while importing?</h3>
+        <p>Simple data transformations can be performed as part of the import process. Any SQL or user-defined function can be applied to the data or to a specified column during the SQL INSERT.</p>
+        <p>For example, you might want to sort your data during import. The sorted data would result in more efficient queries.</p>
+        <p class="note">Data transformations will result in longer import times.</p>
+        <h4 class="Quick">No</h4>
+        <p>If you don't need to do any data transformation, you can choose any method.</p>
+        <h4 class="Quick">Yes</h4>
+        <ul>
+            <li>If you do need to do some data transformation, use the <span class="Strong">External Table</span> method</li>
+            <li>You can also use the <span class="Strong">Data Streaming</span> method if you perform the transformation using external software before streaming.</li>
+            <li><span class="Strong">Copy From</span> does not support data transformation (with the exception of date format).</li>
+        </ul>
+        <h4 class="Quick">Limited data handling with Copy From command line options</h4>
+        <p>The <span class="Strong">Copy From</span> method provides command line options that let you easily do the following:</p>
+        <ul>
+            <li>Date Format: specify the date format</li>
+            <li>Skip Rows: you can skip a specified number of rows at the beginning of the file (such as header row) and also stop import after a specified number of rows</li>
+            <li>Error Handling: continue to import up to a specified number of errors</li>
+        </ul>
+        <p class="example">Which method is right for you?</p>
+        <table style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');border-left-style: solid;border-left-width: 1px;border-left-color: #0e978f;border-right-style: solid;border-right-width: 1px;border-right-color: #0e978f;border-top-style: solid;border-top-width: 1px;border-top-color: #0e978f;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #0e978f;margin-left: 0;margin-right: auto;" class="TableStyle-Default_Table" cellspacing="0">
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Default_Table-Head-Header1">
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>Command</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>csv file</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>Parquet file</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>Other file type (including other data sources)</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>Remote file location?</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadD-Column1-Header1">
+                        <p>Data transformation?</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p><span class="strong"><a href="../../../SQL_Reference_Guide/17_2.2_Data_Manipulation_Language.htm#SQL_Ref_2.2.2._COPY_FROM_(bulk_import)">COPY FROM</a></span><![CDATA[  ]]></p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">û</span> (date
+ format only)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p><span class="strong"><a href="../../../Concepts/9_1.7_External_Tables.htm">External Tables</a></span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <p><span class="strong"><a href="../../../Drivers/Drivers.htm">Data Streaming</a></span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">û</span> (must
+ perform in source API)</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

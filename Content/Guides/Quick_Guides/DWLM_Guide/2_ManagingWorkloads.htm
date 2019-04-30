@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+        <link href="../../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Managing Workloads</h1>
+        <p>You can define the specific hardware resources to be used by each SQream instance in its configuration settings. This setting defines the ID of the GPU and its internal memory capacity, CPU memory and more. See more information regarding this here &lt;add a link to the installation guide on the json parameter setting&gt;).</p>
+        <p>The DWLM allows you to define which SQream instance (by instance_id) will provide resources to which services and assign specific sessions to those services. This can be used as a tool to manage the general priority of connections/statements in resource allocation.</p>
+        <p>With this feature, you can subscribe 1 service to multiple SQream instances, and/or, 1 SQream instance to multiple services.</p>
+        <p class="note">If you do not specify any service to any instance, then all resources will be shared by all requests equally using the default service "sqream".</p>
+        <p class="example">Examples:</p>
+        <p class="example">Case 1:</p>
+        <p>The following configuration allocates resources as follows:</p>
+        <ul>
+            <li>1 resource for ETL</li>
+            <li>3 resources for queries</li>
+            <li>All resources for sessions connected with service management</li>
+        </ul>
+        <table style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');margin-left: 0;margin-right: auto;" class="TableStyle-Default_Table" cellspacing="0">
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Default_Table-Head-Header1">
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>Service/Instance</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>Instace1</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>Instance2</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>Instance3</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadD-Column1-Header1">
+                        <p>Instance4</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p>ETL service</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p>Query service </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <p>Management service</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>With this configuration, ETL will not compete for hardware resources with the common query service statements.</p>
+        <p>Statements coming from management service will be able to use any hardware resource from any instance.</p>
+        <p class="example">Case 2:</p>
+        <p>The following configuration allocates resources as follows:</p>
+        <ul>
+            <li>1 resource for ETL</li>
+            <li>2 resources for queries</li>
+            <li>1 resource for sessions connected with service management</li>
+        </ul>
+        <table style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');margin-left: 0;margin-right: auto;" class="TableStyle-Default_Table" cellspacing="0">
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Default_Table-Head-Header1">
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>Service/Instance</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>Instace1</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>Instance2</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>Instance3</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadD-Column1-Header1">
+                        <p>Instance4</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p>ETL service</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p>Query service </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <p>Management service</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">û</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                        <p><span style="font-family: 'Wingdings'">ü</span>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>With this configuration, ETL/queries/management services will not compete on hardware resources and each will have its own pool or pools of instances.</p>
+    </body>
+</html>

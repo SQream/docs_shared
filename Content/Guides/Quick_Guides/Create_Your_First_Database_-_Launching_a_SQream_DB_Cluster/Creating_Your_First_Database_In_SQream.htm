@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body>
+        <h1>Quick guide to launching a SQream DB cluster</h1>
+        <p>These steps provide an overview to getting started with SQream. They summarize the procedures for launching your SQream cluster, and creating and using your first SQream database.</p>
+        <p>You can also use this as a quick reference for creating subsequent databases, starting at <a href="#Step">Step 4: Create a new database</a></p>
+        <div class="mc-flowchart">
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Step 1: Install SQream</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>For complete information on installing SQream, see <a href="../../Installation_Guides/SQream Installation Guides.htm#InstallTheSQreamDBDaemon">SQream Installation Guides</a>.</p>
+                    <p>After you have installed SQream, you are ready to create and start using your SQream cluster and your first database.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Step 2: Create the SQream cluster</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>A SQream storage cluster is the collection of all stored objects:</p>
+                    <ul>
+                        <li>Databases</li>
+                        <li>Schemas</li>
+                        <li>Tables</li>
+                        <li>External tables</li>
+                        <li>Views</li>
+                        <li>User-defined functions</li>
+                        <li>Roles (users)</li>
+                    </ul>
+                    <p>Each installation comprises one storage cluster.</p>
+                    <p>After you have completed SQream installation, you must <a href="../../Administrator_Guides/Administration_Guide/17_3.2_Setting_up_SQream_DB.htm#CreateTheCluster">define the storage cluster</a>.</p>
+                    <p>Once it is created, it should not require any intervention during normal operation.</p>
+                    <p>For more information, see <a href="../../Administrator_Guides/Administration_Guide/5_2.2_Storage_Cluster.htm">Storage Cluster.</a></p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Step 3: Connect to the default database</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>After the storage cluster has been created, connect to the default 'master' database.</p>
+                    <p>For the first connection, connect the 'master' database with the 'sqream' user.</p>
+                    <div class="code">
+                        <p>bin/ClientCmd --user=sqream --password=&lt;password&gt; --database=master</p>
+                        <p>–-host=&lt;ipaddress&gt; –-port=5000 –-service=sqream</p>
+                    </div>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot><a name="Step"></a>Step 4: Create a new database</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>Your storage cluster may have many databases residing in it; you can create different databases for different use cases.</p>
+                    <p>Use the <a href="../../../SQL_Reference_Guide/16_2.1_Data_Definition_Language.htm#CREATE">CREATE DATABASE</a> command to create a new database in the current storage cluster. After it is created, make sure to connect the new database (see Connect to the database).</p>
+                    <p>For more information, see <a href="../../Administrator_Guides/Administration_Guide/6_2.3_Databases.htm">Databases.</a></p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Step 5: Create users and permissions</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>SQream uses the concept of <span class="emphasis">roles</span> to manage users and database access permissions.</p>
+                    <ul>
+                        <li>For a role to be used as a user, it must have <span class="strong">PASSWORD</span>, <span class="strong">LOGIN</span> and <span class="strong">CONNECT</span> permissions to a specified database(s).</li>
+                        <li>For a role to create and manage (read/write/alter) objects, it must have <span class="strong">CREATE</span> and <span class="strong">USAGE</span> permissions at the respective schema level.</li>
+                    </ul>
+                    <p>A role is defined for all databases in the cluster, but you can define different permissions for the same role in different databases in the cluster. However, the user and password are always the same for a role in all databases.</p>
+                    <p>On database creation, SQream automatically generates the following:</p>
+                    <ul>
+                        <li><span class="strong">sqream</span> user (superuser)</li>
+                        <li><span class="strong">PUBLIC</span> schema</li>
+                        <li><span class="strong">PUBLIC</span> role (with usage and create permissions on public schema, but no login permissions)</li>
+                    </ul>
+                    <p>Use the <a href="../../../SQL_Reference_Guide/16_2.1_Data_Definition_Language.htm#CREATE2">CREATE ROLE</a> command to add a new user/role to the cluster.</p>
+                    <p>For more information, see <a href="../../../SQL_Reference_Guide/16_2.1_Data_Definition_Language.htm#roles-and-permissions">Managing Roles and Permissions</a>.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Step 6: Connect to the database cluster</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>To connect to the SQream database cluster, you need the following parameters:</p>
+                    <ul>
+                        <li>Logon info: username and password</li>
+                        <li>Name of the database</li>
+                        <li>Host IP</li>
+                        <li>Port</li>
+                        <li>Service name</li>
+                        <li>SSL (Optional)</li>
+                    </ul>
+                    <p>You can connect the database via any of the following:</p>
+                    <ul>
+                        <li>ClientCmd command line interface (supported only on the server itself) (see <a href="../../Administrator_Guides/Administration_Guide/17_3.2_Setting_up_SQream_DB.htm#connect-clientcmd">Setting Up SQream DB Using ClientCmd</a>)</li>
+                        <li>JDBC connector (see <a href="../../../Drivers/JDBC/4_3.1_Connecting_to_sqream_creating_a_table_with_some_data_and_retrieveing_the_data.htm">SQream JDBC Connector Documentation</a>)</li>
+                        <li>ODBC connector (see <a href="../../../Drivers/ODBC_JDBC_Windows/3_2_Create_and_configure_the_ODBC_Data_Source.htm">SQream ODBC Connector Documentation</a>)</li>
+                        <li>.NET connector (see <a href="../../../Drivers/DotNet/4_3_Create_a_connection_to_SQream_DB.htm">SQream .NET Connector Documentation</a>)</li>
+                        <li>Python connector (see <a href="../../../Drivers/Python/5_2.1_Import_and_establish_a_connection,_run_a_query.htm">SQream Python Connector Documentation</a>)</li>
+                        <li>NodeJS connector (see <a href="../../../Drivers/NodeJS/3_2.1_Create_a_node.js_file_to_configure_your_connection_and_database_query.htm">SQream NodeJS Connector Documentation</a>)</li>
+                        <li>Native C++ connector (see <a href="../../../Drivers/CPP/7_2.1_Import_and_establish_a_connection.htm">SQream C++ Connector Documentation</a>)</li>
+                        <li>Native Java connector (see <a href="../../../Drivers/Java/5_2.1_Import_and_establish_a_connection.htm">SQream Java Connector Documentation</a>)</li>
+                    </ul>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Step 7: Create objects</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>Once you are connected to the desired database, you can create the following objects:</p>
+                    <h3>Tables</h3>
+                    <p>A table is a set of data elements organized into horizontal rows and vertical columns. A table has a specified number of columns but can have any number of rows.</p>
+                    <p>Use the <a href="../../../SQL_Reference_Guide/16_2.1_Data_Definition_Language.htm#CREATE3">CREATE TABLE</a> command to create a new table in the current database.</p>
+                    <h3>External tables</h3>
+                    <p>External tables allow SQream to access and query data that is stored outside the database in a non-SQream format. Upon creation, the user should specify the external file format and location, and the required table DDL. Once created, SQream will query the tables as if they were regular tables.</p>
+                    <p>Use the <a href="../../../SQL_Reference_Guide/16_2.1_Data_Definition_Language.htm#CREATE4">CREATE EXTERNAL TABLE</a> command  to create a new external table in the current database.</p>
+                    <h3>Views</h3>
+                    <p>A view is the result set of a stored database query. You can query a view just as you would query a regular or external table. The view query command resides in the database metadata.</p>
+                    <p>Use the <a href="../../../SQL_Reference_Guide/16_2.1_Data_Definition_Language.htm#CREATE5">CREATE VIEW</a> command to create a new view in the current database.</p>
+                    <h3>Saved queries</h3>
+                    <p>Saved queries allow SQream to save and re-execute a query plan. This saves compiler time on each execution, and therefore can help optimize the total query execution time.</p>
+                    <p>Use the <a href="../../../SQL_Reference_Guide/18_2.3_Operational_Commands.htm#Create">CREATE SAVED QUERY</a> and the <a href="../../../SQL_Reference_Guide/18_2.3_Operational_Commands.htm#Execute">EXECUTE SAVED QUERY</a> commands  to save queries and then execute them.</p>
+                    <h3>User-defined functions</h3>
+                    <p>SQream supports user-defined functions written in Python. You can use this capability to:</p>
+                    <p>Generate your own functions to run in SQL commands as a row-level function.</p>
+                    <p>Run Python code from within SQream database as a utility function</p>
+                    <p>For more information, see <a href="../../../SQL_Reference_Guide/24_2.9_User_Defined_Functions.htm">User Defined Functions</a>.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Step 8: Load data</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>For information about importing your data into SQream, see <a href="../Loading_Data_Into_SQream/1_Loading_Data_Overview.htm">How to Load Data into SQream</a>.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Step 9: Query data </MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>SQream supports most ANSI 92 syntaxes, so querying a SQream database is easy and straight-forward.</p>
+                    <p>For more information see the <a href="../../../SQL_Reference_Guide/1_Overview.htm">SQL Reference Guide</a>.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Step 10: Delete old data</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <ul>
+                        <li>DELETE<br />Performs a logical deletion of selected rows. The data remains on the disk until a clean-up process is performed.<br />Use the <a href="../../../SQL_Reference_Guide/17_2.2_Data_Manipulation_Language.htm#DELETE">DELETE</a> command to delete partial rows based on the where clause.</li>
+                        <li>TRUNCATE<br />Removes all the rows from a table without scanning the table.<br />Use the <a href="../../../SQL_Reference_Guide/17_2.2_Data_Manipulation_Language.htm#TRUNCATE">TRUNCATE</a> command  to quickly remove all the rows of a table.</li>
+                    </ul>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+        </div>
+    </body>
+</html>

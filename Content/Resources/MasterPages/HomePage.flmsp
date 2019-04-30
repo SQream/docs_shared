@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="" />
+        <meta name="author" content="" /><title></title>
+        <link href="../Stylesheets/StylesForHomePage.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="contentBody" class="off-canvas-main">
+            <MadCap:bodyProxy xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+            <div class="footer center">
+                <div class="home-master-page-footer">
+                    <div>
+                        <p>
+                            <img src="../Images/Assets/Icons/SocialMedia/AddSM-gray.png" />
+                        </p>
+                        <p>FOLLOW&#160;US</p>
+                        <table style="width: 100%;">
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td><a href="[%=General.Facebook%]" target="_blank"><img src="../Images/Assets/Icons/SocialMedia/FB-gray.png" /></a>
+                                    </td>
+                                    <td>
+                                        <p><a href="[%=General.Twitter%]" target="_blank"><img src="../Images/Assets/Icons/SocialMedia/Twitter-gray.png" /></a>
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p><a href="[%=General.LinkedIn%]" target="_blank"><img src="../Images/Assets/Icons/SocialMedia/LI-gray.png" /></a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <p>
+                            <img src="../Images/Assets/Logos/sqream_logo.png" />
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <img src="../Images/Assets/Icons/MainIcons/Contact-gray.png" />
+                        </p>
+                        <p><a href="mailto:support@sqream.com"><MadCap:variable name="General.Email" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /></a>
+                        </p>
+                        <p />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p><a class="SQreamHomeSite" href="https://sqream.com" target="_blank">SQream.com</a>
+        </p>
+        <MadCap:snippetBlock src="../Snippets/VersionControl.flsnp" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    </body>
+    <script src="../_TopNav/_topnav.js">
+    </script>
+</html>

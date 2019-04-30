@@ -1,0 +1,623 @@
+/*<meta />*/
+
+@font-face 
+{
+	font-family: 'Lato';
+	src: url(../Fonts/Lato.ttf);
+}
+
+a:link, a:visited {
+	color: #3098CC;
+}
+
+.title-bar-layout a.logo
+{
+	background: url('../Images/Assets/Logos/sqream_logo.png') no-repeat center center, -webkit-linear-gradient(top, transparent 0%, transparent 100%);
+}
+
+/* Home Page General Styles*/
+
+body
+{
+	font-family: 'Lato';
+	line-height: 1.5em;
+}
+
+h1
+{
+	font-size: 2.75em;
+}
+
+h2
+{
+	font-size: 1.6785em;
+}
+
+p
+{
+	color: #5a5a5a;
+	margin-bottom: 8px;
+	margin-top: 8px;
+}
+
+.center
+{
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	float: none !important;
+	text-align: center;
+}
+
+.off-canvas-content .main-section > .outer-row
+{
+	max-width: 100%;
+	padding: 0;
+}
+
+/*==Mad Cap proxy/editor assigned styles==*/
+
+MadCap|searchBarProxy
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	float: none;
+	width: 50%;
+}
+
+MadCap|topicToolbarProxy
+{
+	float: none;
+}
+
+MadCap|menuProxy.menu1
+{
+	mc-toc-depth: 1;
+	mc-context-sensitive: True;
+}
+
+MadCap|menuProxy.menu2
+{
+	mc-toc-depth: 1;
+	mc-context-sensitive: True;
+}
+
+html.home-page
+{
+	mc-community-features: disabled;
+}
+
+/* Custom Home Link*/
+
+.SQreamHomeSite, a.SQreamHomeSite:visited, a.SQreamHomeSite:link
+{
+	display: none;
+	color: #376bb4;
+	padding-right: 8px;
+	padding-top: 4px;
+	position: relative;
+	text-decoration: none;
+}
+
+.VersionControl 
+{
+	display: none;
+	padding-left: 20px;
+	padding-top: 4px;
+	position: relative;
+}
+
+.dropbtn {
+	background-color: white;
+	color: #0e978f;
+	padding: 2px 0px 2px 5px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	text-align: left;
+	width: 90px;
+  }
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: white;
+	width: 90px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 0px;
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	padding-left: 5px;
+	padding-top: 2px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown .GeneralVersion {
+	padding-right: 5px;
+}
+
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	color: black;
+}
+
+.dropdown:hover .dropbtn {
+		background-color: #f1f1f1;
+}
+
+.caret {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px dashed;
+    display: inline-block;
+    font-weight: 700;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    width: 0px;
+}
+
+
+ul.navigation
+{
+	display: none;
+}
+
+/*==Top Navigation Bar Section==*/
+
+nav.title-bar	/*Adds bottom border on top navigation bar*/
+{
+	border-bottom: 1px solid #d3d3d3;
+}
+
+/*==Home Page Hero Section==*/
+
+div.topic-hero
+{
+	padding-bottom: 50px;
+	padding-top: 50px;
+	background-image: linear-gradient(to right, #3098CC,#0e978f, #1DC6B2, #8ecb92);
+}
+
+/*==Home Tiles section==*/
+
+div.home-tiles	/*This layout was created using the Responsive Layout Editor in MadCap Flare. Go to: Home Ribbon > Styles Section > Responsive Layout*/
+{
+	mc-grid-row: true;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+div.home-tiles::before
+{
+	content: ' ';
+	display: table;
+}
+
+div.home-tiles::after
+{
+	content: ' ';
+	display: table;
+	clear: both;
+}
+
+div.home-tiles > div
+{
+	float: left;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+div.home-tiles > div:nth-child(1)
+{
+	width: 10%;
+	height: 10%;
+	margin-left: 34%;
+}
+
+div.home-tiles > div:nth-child(2)
+{
+	width: 10%;
+	height: 10%;
+	margin-left: 1%;
+}
+
+div.home-tiles > div:nth-child(3)
+{
+	width: 10%;
+	height: 10%;
+	margin-left: 1%;
+}
+
+/*=Elements for text contained within each home-tile=*/
+
+p.tile-title
+{
+	text-align: center;
+}
+
+a.home-button, a.home-button:link, a.home-button:visited
+{
+	display: block;
+	padding: 7px 10px;
+	text-decoration: none;
+	color: #0e978f;
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	border: 2px solid #0e978f;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+a.home-button svg
+{
+	fill: #0e978f;
+	padding-top: 13%;
+}
+
+a.home-button svg g.cls-6
+{
+	fill: white;
+}
+
+a.home-button:hover
+{
+	background-color: #0e978f;
+	color: #FFF;
+}
+
+a.home-button:hover svg
+{
+	fill: white;
+}
+
+a.home-button:hover svg g.cls-6
+{
+	fill: #0e978f;
+}
+
+a.home-button span
+{
+	display: block;
+	padding-top: 10%;
+	font-size: 1em;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+/*==Info section==*/
+
+div.info-container
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 75%;
+	padding-bottom: 0px;
+}
+
+div.info-section	/*This layout was created using the Responsive Layout Editor in MadCap Flare. Go to: Home Ribbon > Styles Section > Responsive Layout.*/
+{
+	mc-grid-row: true;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.info-section::before
+{
+	content: ' ';
+	display: table;
+}
+
+div.info-section::after
+{
+	content: ' ';
+	display: table;
+	clear: both;
+}
+
+div.info-section > div
+{
+	float: left;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+div.info-section > div:nth-child(1)
+{
+	width: 25%;
+	margin-left: 25%;
+}
+
+div.info-section > div:nth-child(2)
+{
+	width: 25%;
+}
+
+/*=Elements for content contained within each info section=*/
+
+p.info-title
+{
+	line-height: 1.5em;
+	padding-bottom: 10px;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
+	width: 40%;
+	margin: auto;
+}
+
+p.info-content
+{
+	font-size: 0.9em;
+}
+
+/*==Home Page Footer==*/
+
+div.footer
+{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	background-color: #f7f7f7;
+}
+
+div.footer a
+{
+	text-decoration: none;
+	color: #808080;
+}
+
+div.footer p	/* Complex Selector: Any <p> that is contained within div.footer will have the following properties */
+{
+	font-size: 0.8em;
+	color: #808080;
+}
+
+div.home-master-page-footer	/*This layout was created using the Responsive Layout Editor in MadCap Flare. Go to: Home Ribbon > Styles Section > Responsive Layout*/
+{
+	mc-grid-row: true;
+	margin-left: auto;
+	margin-right: auto;
+	width: 55%;
+}
+
+div.home-master-page-footer::before
+{
+	content: ' ';
+	display: table;
+}
+
+div.home-master-page-footer::after
+{
+	content: ' ';
+	display: table;
+	clear: both;
+}
+
+div.home-master-page-footer > div
+{
+	float: left;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+div.home-master-page-footer > div:nth-child(1)
+{
+	width: 25%;
+	margin-left: 0%;
+}
+
+div.home-master-page-footer > div:nth-child(2)
+{
+	width: 50%;
+	margin-left: 0%;
+	margin-top: 5%;
+}
+
+div.home-master-page-footer > div:nth-child(3)
+{
+	width: 25%;
+	margin-left: 0%;
+	margin-top: 3%;
+}
+
+a.hide
+{
+	display: none;
+}
+
+/*===========================================================================================================================================================
+Styles after this point are styles that are for specific mediums. If any additional styles are added to this template they will be listed after mediums.
+[@media tablet] declares styles that will apply when the screen is in tablet view
+[@media mobile] declares styles that will apply when the screen is in mobile view
+===========================================================================================================================================================*/
+
+
+@media tablet
+{
+
+		
+	div.home-tiles > div:nth-child(1) {
+		width: 23%;
+		margin-left: 15%;
+	}
+	
+	div.home-tiles > div:nth-child(2) {
+		width: 23%;
+	}
+	
+	div.home-tiles > div:nth-child(3) {
+		width: 23%;
+	}
+	
+	p.info-title {
+		width: 80%;
+	}
+
+	div.info-section > div:nth-child(1) {
+		margin-left: 20%;
+	}
+
+	div.info-section > div:nth-child(2) {
+		margin-left: 10%;
+	}
+
+	.search-bar._Skins_SearchHome.mc-component {
+		width: 60%;
+	}
+
+	nav.title-bar .menu-icon {
+		display: none;
+	}
+
+	.title-bar-layout .logo-wrapper {
+		flex-basis: auto;
+	}
+
+	.navigation-wrapper {
+		display: flex;
+	}
+}
+
+@media mobile
+{
+
+	div.home-tiles > div:nth-child(1) {
+		width: 28%;
+		margin-left: 6%;
+	}
+
+	div.home-tiles > div:nth-child(2) {
+		width: 28%;
+	}
+
+	div.home-tiles > div:nth-child(3) {
+		width: 28%;
+	}
+
+	.search-bar._Skins_SearchHome.mc-component {
+		width: 80%;
+	}
+
+	div.info-container {
+		width: 100%;
+	}
+	div.info-section > div:nth-child(1) {
+		width: 48%;
+		margin-left: 0%;
+	}
+
+	div.info-section > div:nth-child(2) {
+		width: 48%;
+		margin-left: 0%;
+	}
+
+	div.home-master-page-footer {
+		width: 80%;
+	}
+
+	nav.title-bar .menu-icon {
+		display: none;
+	}
+}
+
+/*
+@media only screen and (max-width: 1280px) {
+	
+	div.home-tiles > div:nth-child(1) {
+		width: 23%;
+		margin-left: 15%;
+	}
+	
+	div.home-tiles > div:nth-child(2) {
+		width: 23%;
+	}
+	
+	div.home-tiles > div:nth-child(3) {
+		width: 23%;
+	}
+	
+	p.info-title {
+		width: 80%;
+	}
+
+	div.info-section > div:nth-child(1) {
+		margin-left: 20%;
+	}
+
+	div.info-section > div:nth-child(2) {
+		margin-left: 10%;
+	}
+
+	.search-bar._Skins_SearchHome.mc-component {
+		width: 60%;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+
+	div.home-tiles > div:nth-child(1) {
+		width: 28%;
+		margin-left: 6%;
+	}
+
+	div.home-tiles > div:nth-child(2) {
+		width: 28%;
+	}
+
+	div.home-tiles > div:nth-child(3) {
+		width: 28%;
+	}
+
+	.search-bar._Skins_SearchHome.mc-component {
+		width: 80%;
+	}
+
+	div.info-container {
+		width: 100%;
+	}
+	div.info-section > div:nth-child(1) {
+		width: 48%;
+		margin-left: 0%;
+	}
+
+	div.info-section > div:nth-child(2) {
+		width: 48%;
+		margin-left: 0%;
+	}
+
+	div.home-master-page-footer {
+		width: 80%;
+	}
+
+	div.side-menu {
+		display: none;
+	}
+
+	.buttons.popup-container.clearfix.topicToolbarProxy._Skins_TopicToolBar.mc-component.nocontent {
+		margin-bottom: 0;
+	}
+
+	div.topic-layout > div:nth-child(2) {
+		width: 90%;
+		margin-left: 5%;
+	}*/

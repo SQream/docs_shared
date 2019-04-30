@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body>
+        <h1>Connecting To A Service</h1>
+        <p>DTo connect a specific service, use the attribute <span class="codeCH">SERVICE</span> in the connect string.</p>
+        <p>If no service is specified, SQream will connect the default service ‘sqream’.</p>
+        <h4>ClientCmd command line:</h4>
+        <p>Add the argument <span class="codeCH">service=&lt;service_name&gt;</span></p>
+        <p class="example">For example:</p>
+        <p>Connect the ETL service</p>
+        <div class="code"><pre xml:space="preserve">./bin/ClientCmd --user=sqream --password=sqream --database=master</pre><pre xml:space="preserve">--host=127.0.0.1 --port=3108 --service=etl --clustered</pre>
+        </div>
+        <h4>JDBC driver</h4>
+        <p>Add the argument <span class="codeCH">service=&lt;service_name&gt;</span> to the JDBC URL</p>
+        <p class="example">For example:</p>
+        <p>Connect the service ETL</p>
+        <div class="code"><pre xml:space="preserve"><p>jdbc:Sqream://hostname:3108/master;user=sqream;password=mypassword;service=etl;cluster=true;ssl=true;</p></pre>
+        </div>
+        <p>For more information, visit SQream <a href="../../../Drivers/JDBC/1_The_SQream_JDBC_Connector__Overview.htm">JDBC documentation.</a></p>
+        <h4>Java connector</h4>
+        <p>Add the argument <span class="codeCH">service=”service_name”</span> to the Java connection handler:</p>
+        <p class="example">For example:</p>
+        <p>Connect the ETL service</p>
+        <div class="code">
+            <p>ConnectionHandle Client = new ConnectionHandle ("hostname", 5000, "master", "sqream", "mypassword",”etl”);</p>
+            <p>Client = Client.connect();</p>
+        </div>
+        <p>Note that currently the SQream java connector must connect to SQream directly, and not via the load balancer.</p>
+        <p>For more information, visit SQream <a href="../../../Drivers/Java/1_The_SQream_Native_Java_Connector__Overview.htm">Java connector documentation</a>.</p>
+        <h4>ODBC driver</h4>
+        <p>Add the argument service to the ODBC DSN.</p>
+        <ul>
+            <li>In Linux, add the argument in the odbc.ini file.</li>
+        </ul>
+        <p class="example">For example:</p>
+        <div class="code">
+            <p>[mydsn]</p>
+            <p>Driver=/home/sqream/ODBC/sqream_odbc.so</p>
+            <p>Description=sqream64</p>
+            <p>Server=hostname</p>
+            <p>Port=3108</p>
+            <p>Database=master</p>
+            <p>Service=etl</p>
+            <p>User=sqream</p>
+            <p>Password=mypassword</p>
+            <p>Cluster=true</p>
+            <p>ssl=false</p>
+        </div>
+        <p>For more information, visit SQream <a href="../../../Drivers/ODBC_Linux/1_ODBC_for_Linux_documentation.htm">ODBC documentation.</a></p>
+        <ul>
+            <li>In Windows, add the argument at the ODBC application, at the specific DSN</li>
+        </ul>
+        <p class="example">For example:</p>
+        <p>
+            <img src="Images/windows1.png" />
+        </p>
+        <p>For more information, visit SQream <a href="../../../Drivers/ODBC_JDBC_Windows/1_ODBC_and_JDBC_for_Windows_x64_Driver_Package_instructions.htm">documentation</a>.</p>
+        <h4>PYTHON</h4>
+        <p>Add the service to the connection settings.</p>
+        <p class="example">For example:</p>
+        <div class="code">
+            <p>con = SQream_python_connector.Connector()</p>
+            <p>sqream_connection_params = '127.0.0.1', 3108, 'master', 'sqream', 'mypassword', True, 30, 'etl'</p>
+        </div>
+        <p>For more information, visit SQream <a href="../../../Drivers/Python/1_The_SQream_Native_Python_Connector__Overview.htm">python documentation</a>.</p>
+        <h4>.NET</h4>
+        <p>Add the service to the connection settings.</p>
+        <p class="example">For example:</p>
+        <div class="code">
+            <p>var connectionString = "Data Source=127.0.0.1,3109;User=sqream;Password=mypassword;Initial  Catalog=master;Integrated Security=true;Service=etl";</p>
+            <p>var connection = new SqreamConnection(connectionString);</p>
+            <p>connection.Open();</p>
+        </div>
+        <p>For more information, visit SQream <a href="../../../Drivers/DotNet/1_.NET_Connector.htm">.NET documentation</a>.</p>
+        <h4>NodeJS</h4>
+        <p>Add the service to the connection settings.</p>
+        <p class="example">For example:</p>
+        <div class="code">
+            <p>const Connection = require('SQream-nodejs-connector');</p>
+            <p>const config = {</p>
+            <p>host: 'hostname',</p>
+            <p>port: 3108,</p>
+            <p>username: 'sqream',</p>
+            <p>password: 'mypassword',</p>
+            <p>connectDatabase: 'master',</p>
+            <p>cluster: 'true',</p>
+            <p>service: 'etl'</p>
+            <p>};</p>
+        </div>
+        <p>For more information, visit SQream <a href="../../../Drivers/NodeJS/1_Node.js_Driver.htm">NodeJS documentation</a>.</p>
+    </body>
+</html>

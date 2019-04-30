@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <div class="VersionControl">
+            <div class="dropdown">
+                <button class="dropbtn"><MadCap:variable name="ProductVersions.SQream" /><span class="caret"></span>
+                </button>
+                <div class="dropdown-content">
+                </div>
+            </div>
+        </div>
+        <p>
+            <script src="/VersionData.js">
+            </script>
+        </p>
+    </body>
+</html>

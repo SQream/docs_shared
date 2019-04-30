@@ -1,0 +1,929 @@
+/*<meta />*/
+
+/*===========================================================================================================================================================
+
+Hello! If this is your first time looking at a stylesheet within the text editor view, what you are reading right now is a "comment". Comments are added throughout this stylesheet with the purpose of making the source code easier to understand, comments will not be interpreted during the compile process. Since comments are not interpreted during the compile process, feel free to add or remove any comments.
+
+For help with MadCap Flare go to Help Ribbon > Topics Section > Open Help. Alternatively visit the Flare Online Help at help.madcapsoftware.com
+
+If you have any questions regarding how to work with this stylesheet or template project, please contact MadCap Technical Support. 
+https://www.madcapsoftware.com/support/contact-options.aspx
+
+NOTE: Generally, this stylesheet has elements listed out in the order that they appear in the topic from top to bottom. The exception are General styles which are at the top and the stylesheet mediums which are at the bottom.
+
+EXAMPLE: Since the search-bar is at the top of the topic page, it will be listed closer to the top of this stylesheet.
+
+===========================================================================================================================================================*/
+
+/*==Topic General Styles==*/
+
+@font-face 
+{
+	font-family: Lato;
+	src: url(../Fonts/Lato.ttf);
+}
+
+html
+{
+	font-size: 15px;
+}
+
+nav.title-bar
+{
+	background-image: linear-gradient(to right, #3098CC,#0e978f, #1DC6B2, #8ecb92);
+}
+
+body
+{
+	color: #404040;
+	background-color: #fff;
+	/*line-height: 1.4em;*/
+	mc-hyphenate: never;
+	font-family: Lato;
+}
+
+h1
+{
+	font-size: 2rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+	padding-bottom: 0px;
+	margin-top: 16px;
+	font-family: Lato;
+	color: #0e978f;
+/*	mc-heading-level: 1;*/
+}
+
+h2
+{
+	color: #0e978f;
+	font-size: 1.63rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+	margin-top: 16px;
+/*	mc-auto-number-format: 'CH: {chapnum}. ';*/
+}
+
+
+h3
+{
+	color: #0e978f;
+	font-size: 1.27rem;
+	font-weight: bold;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	margin-top: 16px;
+/*	mc-auto-number-format: 'CH: {chapnum}.{n+}. ';*/
+}
+
+h4
+{
+	color: #0e978f;
+	font-size: 1.09rem;
+	font-style: italic;
+	font-weight: bold;
+	margin-bottom: 0px;
+	margin-top: 12px;
+/*	mc-auto-number-format: 'CH: {chapnum}.{n}.{n+}. ';*/
+}
+
+h4.Quick {
+	color: black;
+}
+
+h5
+{
+	color: #0e978f;
+	font-size: 1rem;
+	font-style: italic;
+	font-weight: normal;
+	margin-bottom: 0px;
+	margin-top: 12px;
+}
+
+h6
+{
+	color: #0e978f;
+	font-size: 0.9rem;
+	font-weight: normal;
+	margin-bottom: 0px;
+	margin-top: 12px;
+}
+
+li.heading2
+{
+	color: #0e978f;
+	font-size: 1.63rem;
+	font-weight: bold;
+	margin-bottom: 0px;
+	margin-top: 16px;
+}
+
+li
+{
+	font-size: 1rem;
+}
+
+p
+{
+	font-family: Lato;
+	font-size: 1rem;
+	margin-bottom: 8px;
+	margin-top: 4px;
+}
+
+p.body
+{
+	font-family: Lato;
+	font-size: 1rem;
+	margin-bottom: 8px;
+	margin-top: 8px;
+}
+
+p.leftBig {
+	font-size: 1.5rem;
+	font-weight: bold;
+	line-height: 2rem;
+}
+
+p.code
+{
+	border: 1px dashed black;
+	font-family: "Courier New";
+	font-size: 0.9rem;
+	font-style: italic;
+	font-weight: bold;
+	margin: 8px 0px;
+	padding: 0em 1em;
+}
+
+span.colorBoldItalic
+{
+	color: #0e978f;
+	font-style: italic;
+	font-weight: bold;
+}
+
+p.configTableItalic
+{
+	font-family: "Courier New";
+	font-size: 0.81rem;
+	font-style: italic;
+	font-weight: bold;
+	margin: 0px;
+	padding-left: 8px;
+}
+
+table p,
+table pre
+{
+	font-size: 0.9rem;
+}
+
+pre
+{
+	font-family: 'Courier New';
+}
+
+p.configTable
+{
+	font-family: "Courier New";
+	font-size: 0.81rem;
+	font-style: normal;
+	font-weight: bold;
+	margin: 0px;
+	padding-left: 8px;
+}
+
+p.example,
+.code .title
+{
+	font-family: 'Lato';
+	font-size: 1rem;
+	color: #0e978f;
+	font-style: italic;
+}
+
+div.code
+{
+	color: black;
+	border: 1px dashed black;
+	font-family: "Courier New";
+	font-size: 0.9rem;
+	/*font-style: italic;*/
+	font-weight: normal;
+	padding: 1em 1em;
+	margin: 1em 0em;
+}
+
+div.code p
+{
+	font-family: 'Courier New';
+	white-space: pre-wrap;
+	font-size: 0.9rem;
+	padding: 0;
+	margin: 0;
+}
+
+div.FlowChart
+{
+	background-image: url('../Images/Assets/Icons/arrow.png');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	height: 30px;
+	width: 3%;
+	margin: auto;
+	margin-top: 10px;
+}
+
+div.code pre
+{
+	font-family: "Courier New";
+	white-space: pre-wrap;
+	margin: 0;
+}
+
+p.note
+{
+	
+}
+
+p.note:before
+{
+	content: 'NOTE:	';
+	font-weight: bold;
+}
+
+p.tableHeader
+{
+	color: #0e978f;
+	font-weight: bold;
+	font-size: 1.09rem;
+	margin-bottom: 4px;
+	margin-top: 0px;
+}
+
+p.tablecaption,
+p.figurecaption,
+caption.title,
+div.title
+{
+	color: black;
+	font-style: italic;
+	text-align: left;
+	padding-bottom: 8px;
+}
+
+caption.title
+{
+	white-space: nowrap;
+}
+
+p.tableHeading,
+table th
+{
+	color: white;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+p.tableBody
+{
+	font-size: 0.9rem;
+}
+
+p.tableCode
+{
+	font-size: 0.9rem;
+	font-family: 'Courier New';
+}
+
+p.toDo
+{
+	font-weight: bold;
+}
+
+.admonitionblock.note,
+.admonitionblock.tip,
+.admonitionblock.warning
+{
+	background-position-x: 15px;
+}
+
+.admonitionblock table,
+.admonitionblock .TableStyle-Default_Table td
+{
+	border: none;
+	background-color: white;
+	margin-bottom: 0;
+}
+
+.admonitionblock table p,
+.admonitionblock table li
+{
+	font-size: 1rem;
+}
+
+div.tip,
+div.info,
+div.note,
+div.warning
+{
+	background-repeat: no-repeat;
+	background-position-y: center;
+	color: #3499cc;
+	min-height: 60px;
+	padding-left: 60px;
+	padding-top: 14px;
+	padding-bottom: 14px;
+}
+
+div.tip
+{
+	background-image: url('../Images/Assets/Icons/tip.png');
+}
+
+div.info,
+div.note
+{
+	background-image: url('../Images/Assets/Icons/info.png');
+}
+
+div.warning
+{
+	background-image: url('../Images/Assets/Icons/warning.png');
+}
+
+span.codeCH,
+code
+{
+	font-family: "courier New";
+	font-size: 0.9rem;
+	/*font-style: italic;*/
+	font-weight: normal;
+}
+
+span.codeCHBold
+{
+	background-color: #d9d9d9;
+	font-family: "courier New";
+	font-size: 0.9rem;
+	font-style: italic;
+	font-weight: bold;
+}
+
+span.emphasis
+{
+	font-style: italic;
+}
+
+span.gray
+{
+	background-color: #d3d3d3;
+}
+
+span.strong
+{
+	font-weight: bold;
+}
+
+ul
+{
+	margin-top: 4px;
+}
+
+ul ul li
+{
+	list-style-type: disc;
+}
+
+table li
+{
+	font-size: 0.91rem;
+}
+
+ul.checklist
+{
+	list-style: none;
+	padding-left: 0px;
+}
+
+ul.checklist i
+{
+	padding-right: 12px;
+}
+
+img	/*Setting max-width: 100%; property makes images always fit the width of the container*/
+{
+	max-width: 100%;
+	padding: 8px 0px;
+}
+
+img.thumbnail
+{
+	mc-thumbnail: popup;
+}
+
+.button
+{
+	float: none;
+}
+
+p img.icon
+{
+	display: inline;
+	height: 14pt;
+	padding: 0;
+}
+
+.center
+{
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	float: none !important;
+	text-align: center;
+}
+
+a.MCBreadcrumbsLink
+{
+	font-style: italic;
+	text-decoration: underline;
+}
+
+a.MCBreadcrumbsLink:visited
+{
+	color: #0e978f;
+}
+
+a.MCBreadcrumbsLink:hover
+{
+	color: #000000;
+}
+
+MadCap|breadcrumbsProxy
+{
+	border-bottom: none;
+	font-size: 1.2em;
+}
+
+MadCap|miniTOCProxy
+{
+	border-top: none;
+	padding-top: 0px;
+}
+
+p.miniTOC1,
+p.miniTOC2,
+p.miniTOC3
+{
+	margin: 0pt;
+	font-weight: normal;
+	font-size: 1rem;
+}
+
+kbd
+{
+	font-family: "Droid Sans Mono", "DejaVu Sans Mono", monospace;
+	display: inline-block;
+	color: rgba(0,0,0,.8);
+	font-size: .65em;
+	line-height: 1.45;
+	background-color: #f7f7f7;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,.2), 0 0 0 0.1em white inset;
+	box-shadow: 0 1px 0 rgba(0,0,0,.2), 0 0 0 0.1em #fff inset;
+	position: relative;
+	top: -.1em;
+	white-space: nowrap;
+}
+
+MadCap|xref
+{
+	color: #2D8DCC;
+	font-weight: bold;
+	mc-format: '{para}';
+	text-decoration: underline;
+}
+
+MadCap|xref:hover
+{
+	color: #0e978f;
+}
+
+/* Flow Chart Styles */
+
+.mc-flowchart h1
+{
+	padding-bottom: 10px;
+}
+
+.mc-flowchart .dropDownHotspot
+{
+	color: #0e978f;
+	font-size: 1.2rem;
+}
+
+.mc-flowchart .dropDownHead
+{
+	color: #0e978f;
+	display: block;
+	font-size: 1.63rem;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.mc-flowchart .dropDownBody
+{
+	border-bottom: none;
+}
+
+MadCap|dropDown	/*Change the "mc-open-image" and "mc-closed-image" properties to change the icons used in drop-downs*/
+{
+	mc-open-image: url('../Images/Assets/Icons/Arrows/arrow-down-gray.png');
+	mc-closed-image: url('../Images/Assets/Icons/Arrows/arrow-right-gray.png');
+}
+
+/*==Master Page Topic Layout==*/
+
+nav.title-bar	/*Adds bottom border on top navigation bar*/
+{
+	border-bottom: 1px solid #d3d3d3;
+}
+
+div.top-bar	/*Contains the breadcrumbs and toolbar*/
+{
+	min-height: 50px;
+	/*Min-height is necessary for topics that are not included in a TOC*/
+}
+
+.off-canvas-content
+{
+	overflow: hidden;
+}
+
+div.search-container
+{
+	display: none;
+	float: right;
+	max-width: 25%;
+}
+
+/*==Elements for the left side of Master Page layout==*/
+
+div.side-menu	/*This is the div that the menu proxy is contained in*/
+{
+	padding-left: 10px;
+	margin-top: 15px;
+}
+
+/*Styles that provide the border radius to the menu proxy items*/
+
+ul.menu._Skins_SideMenu.mc-component
+{
+	overflow: auto;
+	height: 84vh;
+}
+
+ul.menu._Skins_SideMenu.mc-component li > a.selected
+{
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border-radius: 5px;
+}
+
+a:link
+{
+	color: #3499cc;
+}
+
+a:visited {
+    color: #3499cc;
+}
+
+ul.menu._Skins_SideMenu.mc-component li > a:hover
+{
+	background-color: #0e978f;
+	border-radius: 5px;
+}
+
+ul.menu._Skins_SideMenu.mc-component ul > li > a:hover
+{
+	background-color: #0e978f;
+	border-radius: 5px;
+}
+
+ul.menu._Skins_SideMenu.mc-component ul ul > li > a:hover
+{
+	background-color: #0e978f;
+	border-radius: 5px;
+}
+
+ul.menu._Skins_SideMenu.mc-component ul ul ul > li > a:hover
+{
+	background-color: #0e978f;
+	border-radius: 5px;
+}
+
+ul.menu._Skins_SideMenu.mc-component ul ul ul ul > li > a:hover
+{
+	background-color: #0e978f;
+	border-radius: 5px;
+}
+
+div.topic-layout	/*This layout was created using the Responsive Layout Editor in MadCap Flare. Go to: Home Ribbon > Styles Section > Responsive Layout*/
+{
+	mc-grid-row: true;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.topic-layout::before
+{
+	content: ' ';
+	display: table;
+}
+
+div.topic-layout::after
+{
+	content: ' ';
+	display: table;
+	clear: both;
+}
+
+div.topic-layout > div
+{
+	float: left;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+div.topic-layout > div:nth-child(1)	/*Menu Proxy container*/
+{
+	width: 25%;
+	margin-left: 0%;
+}
+
+div.topic-layout > div:nth-child(2)
+{
+	width: 73%;
+	margin-left: 2%;
+}
+
+div.mobileMenu {
+	display: none;
+}
+
+/* Custom Home Link*/
+
+a.SQreamHomeSite, a.SQreamHomeSite:visited, a.SQreamHomeSite:link
+{
+	display: none;
+	color: white;
+	padding-left: 14px;
+	padding-right: 8px;
+	padding-top: 14px;
+	position: relative;
+	text-decoration: none;
+}
+
+.VersionControl 
+{
+	display: none;
+	padding-left: 20px;
+	padding-top: 6px;
+	position: relative;
+}
+
+.dropbtn {
+	background-color: transparent;
+	color: black;
+	padding: 2px 0px 2px 5px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	text-align: left;
+	width: 90px;
+  }
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #159599;
+	width: 90px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 0px;
+	z-index: 1;
+}
+
+.dropdown-content a:hover {
+	background-color: teal;
+}
+
+.dropdown-content a {
+	color: white;
+	padding-left: 5px;
+	padding-top: 2px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown .ProductVersionsSQream {
+	padding-right: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	color: white;
+}
+
+.caret {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px dashed;
+    display: inline-block;
+    font-weight: 700;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    width: 0px;
+}
+
+ul.navigation
+{
+	display: none;
+}
+
+#resultList .url cite
+{
+	display: none;
+}
+
+/* Hiding Flare Styles*/
+
+abbr,
+acronym,
+b,
+big,
+cite,
+code,
+del,
+em,
+i,
+ins,
+kbd,
+label,
+MadCap.Highlighted,
+q,
+samp,
+small,
+span.boolean,
+span.state,
+strong,
+sub,
+sup,
+tt,
+var
+{
+	mc-hidden: hidden;
+}
+
+/* Imported HTML code styles */
+
+
+div.code .pygments .tok-c, div.code .pygments .tok-ch, div.code .pygments .tok-cm, div.code .pygments .tok-cpf, div.code .pygments .tok-c1, div.code .pygments .tok-cs, div.code .pygments .tok-ge, div.code .pygments .tok-sd
+{
+	font-style: italic;
+	mc-hidden: hidden;
+}
+
+div.code .pygments .tok-k, div.code .pygments .tok-gh, div.code .pygments .tok-gp, div.code .pygments .tok-gs, div.code .pygments .tok-gu, div.code .pygments .tok-kc, div.code .pygments .tok-kd, div.code .pygments .tok-kn, div.code .pygments .tok-kr, div.code .pygments .tok-nc, div.code .pygments .tok-ni, div.code .pygments .tok-ne, div.code .pygments .tok-nn, div.code .pygments .tok-nt, div.code .pygments .tok-ow, div.code .pygments .tok-se, div.code .pygments .tok-si
+{
+	font-weight: bold;
+	mc-hidden: hidden;
+}
+
+/*===========================================================================================================================================================
+Styles after this point are styles that are for specific mediums. If any additional styles are added to this template they will be listed after mediums.
+[@media tablet] declares styles that will apply when the screen is in tablet view
+[@media mobile] declares styles that will apply when the screen is in mobile view
+===========================================================================================================================================================*/
+
+@media tablet
+{
+	.row.nav-search
+	{
+		display: none;
+	}
+
+	div.search-container
+	{
+		display: none;
+		max-width: 100%;
+	}
+
+	div.topic-layout > div:nth-child(1)
+	{
+		display: block;
+	}
+
+	nav.title-bar .menu-icon {
+		display: none;
+	}
+
+	.title-bar-layout .logo-wrapper {
+		flex-basis: auto;
+	}
+
+	.navigation-wrapper {
+		display: flex;
+	}
+
+
+}
+
+@media mobile
+{
+
+	.row.nav-search
+	{
+		display: none;
+	}
+
+	div.search-container
+	{
+		display: none;
+	}
+
+	div.topic-layout > div:nth-child(1)
+	{
+		display: none;
+	}
+
+	div.topic-layout > div:nth-child(2)
+	{
+		width: 98%;
+		margin-left: 2%;
+	}
+
+	div.mobileMenu {
+		display: block;
+	}
+   
+	.buttons._Skins_TopicToolBar.mc-component {
+	   float: right;
+	   margin-right: -4px;
+	   margin-bottom: 0px;
+	}
+
+	ul.menu._Skins_MobileMenu.mc-component {
+		display: block;
+	}
+}
+
+@media pdf
+{
+	
+}
+/*
+@media only screen and (max-width: 1280px) {
+	
+	div.search-container
+	{
+		display: none;
+	}
+
+}
+
+@media only screen and (max-width: 767px) {
+ div.mobileMenu {
+	 display: block;
+ }
+
+ .buttons._Skins_TopicToolBar.mc-component {
+    float: right;
+    margin-right: -4px;
+    margin-bottom: 0px;
+ }
+
+ div.topic-layout > div:nth-child(2) {
+    width: 90%;
+	margin-left: 5%;
+ }
+
+ div.side-menu {
+	 display: none;
+ }
+
+}*/
+

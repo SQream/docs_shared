@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="" />
+        <meta name="author" content="" /><title></title>
+        <link href="" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="search-container">
+            <MadCap:searchBarProxy data-mc-skin="/Project/Skins/SearchTopics.flskn" />
+        </div>
+        <div class="row collapse">
+            <MadCap:bodyProxy />
+        </div>
+        <p><a class="SQreamHomeSite" href="https://sqream.com" target="_blank">SQream.com</a> </p>
+        <MadCap:snippetBlock src="../Snippets/VersionControl.flsnp" />
+    </body>
+    <script src="../_TopNav/_topnav.js">
+    </script>
+</html>

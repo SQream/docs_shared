@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body>
+        <h3>Unsubscribing A Service</h3>
+        <p>To disable the service/instance connectivity and stop using a specific instance for a specific service, use the utility function <span class="codeCH">unsubscribe_service()</span> with the relevant instance_id and service name.</p>
+        <p>By unsubscribing a service from the instance, SQream will stop directing new requests from this service workload to the instance.</p>
+        <p>Note the following:</p>
+        <ul>
+            <li>Existing executing operations will not be stopped. .</li>
+            <li>The last instance from an existing service with working/waiting statements in its queue cannot be unsubscribed.</li>
+            <li>To stop a working or waiting query , use the utility function <span class="codeCH">stop_statement()</span></li>
+        </ul>
+        <h4>Initial configuration:</h4>
+        <p>Delete the service name from the parameter <span class="codeCH">initialSubscribedServices</span> in the instance configuration flag.</p>
+        <p class="example">For example:</p>
+        <p>In the Service Subscribe example above, we subscribed both ETL and management. To unsubscribe ETL, delete it from the instance configuration flag:</p>
+        <div class="code"><pre xml:space="preserve">"runtimeGlobalFlags": {
+     "initialSubscribedServices" : "management"</pre><pre xml:space="preserve">}</pre>
+        </div>
+        <h4>Online un-subscription:</h4>
+        <p>Use the utility function <span class="codeCH">unsubscribe_service()</span> with the relevant instance_id and service name.  The instance ID can either be found in the instance configuration file, or by using the utility function <span class="codeCH">show_subscribed_instances()</span> (see <a href="7_Monitoring_Services.htm#MonitoringServices">Monitoring Services</a>).</p>
+        <p class="example">For example:</p>
+        <div class="code">Select unsubscribe_service(‘node_11’,’etl’);</div>
+    </body>
+</html>

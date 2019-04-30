@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body>
+        <h1>Quick guide to loading data into SQream</h1>
+        <h2>Overview</h2>
+        <p>Importing your data into SQream is easy. There are 3 different methods:</p>
+        <ul>
+            <li><span class="strong">COPY FROM:</span> quickly inserts bulk data from local csv files into a single table</li>
+            <li><span class="strong">External Tables:</span> can import a new external table in the current database under a specific schema.</li>
+            <li><span class="strong">Data Streaming:</span> streams data directly from a source such as a different database or from a remote server. The source data can be any file, application, or database that you can access with one of the SQream connectors.</li>
+        </ul>
+        <h3>General Notes</h3>
+        <ul>
+            <li>Wherever csv file type is mentioned, it includes any delimiter-separated values file type as defined in <a href="https://en.wikipedia.org/wiki/Request_for_Comments">RFC</a> <a href="https://tools.ietf.org/html/rfc4180">4180</a>.</li>
+            <li><span class="strong">Data Streaming:</span> Although you cannot perform data transformations and manipulations as part of the actual data streaming, you can perform a full range of transformations at the source API before streaming.</li>
+            <li>The maximum row length is 10239 bytes.</li>
+        </ul>
+        <p>Let's <a href="2_Comparing_import_methods.htm">compare import methods</a> to see the advantages and limitations of each method.</p>
+    </body>
+</html>
