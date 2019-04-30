@@ -747,6 +747,20 @@ a.SQreamHomeSite, a.SQreamHomeSite:visited, a.SQreamHomeSite:link
 	color: white;
 }
 
+.mp-search .dropdown:hover .dropbtn {
+	color: black;
+	cursor: auto;
+}
+
+.mp-search .dropdown:hover .dropdown-content {
+	display: none;
+}
+
+
+.mp-search .caret {
+	display:none;
+}
+
 .caret {
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
@@ -758,6 +772,8 @@ a.SQreamHomeSite, a.SQreamHomeSite:visited, a.SQreamHomeSite:link
     vertical-align: middle;
     width: 0px;
 }
+
+
 
 ul.navigation
 {
