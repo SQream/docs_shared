@@ -195,7 +195,7 @@ div.topic-hero
 {
 	padding-bottom: 50px;
 	padding-top: 50px;
-	background-image: linear-gradient(to right, #3098CC,#0e978f, #1DC6B2, #8ecb92);
+	background: linear-gradient(to right, #3098CC,#0e978f, #1DC6B2, #8ecb92);
 }
 
 /*==Home Tiles section==*/

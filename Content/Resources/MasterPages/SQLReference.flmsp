@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
     <head>
         <meta charset="utf-8" />
         <meta name="description" content="" />
         <meta name="author" content="" /><title></title>
-        <link href="../Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+        <link href="../Stylesheets/MainStyles.css?v=2" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div class="search-container">
@@ -24,14 +24,12 @@
                     <MadCap:topicToolbarProxy style="mc-topic-toolbar-items: ;" data-mc-skin="/Project/Skins/TopicToolbar.flskn" />
                     <div class="mobileMenu">
                         <MadCap:menuProxy data-mc-skin="/Project/Skins/MobileMenu.flskn" mc-linked-toc="/Project/TOCs/SQLReferenceTOC.fltoc" style="mc-toc-depth: 1;mc-context-sensitive: True;mc-include-parent: True;mc-include-siblings: True;mc-include-children: True;" />
-                    </div>
-                    <MadCap:bodyProxy />
-                </div>
-            </div>
-        </div>
-        <p><a class="SQreamHomeSite" href="https://sqream.com" target="_blank">SQream.com</a> </p>
-        <MadCap:snippetBlock src="../Snippets/VersionControl.flsnp" />
-    </body>
-    <script src="../_TopNav/_topnav.js">
+				</div><MadCap:bodyProxy /></div>
+			</div>
+		</div>
+		<p class="copyrightFooter">Copyright © 2010-2019. All rights reserved.</p><a class="SQreamHomeSite" href="https://sqream.com" target="_blank">SQream.com</a>
+		<MadCap:snippetBlock src="../Snippets/VersionControl.flsnp" />
+	</body>
+    <script src="../_TopNav/_topnav.js?v=2">
     </script>
 </html>

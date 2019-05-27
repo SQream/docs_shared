@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <html>
     <head>
         <meta charset="utf-8" />
         <meta name="description" content="" />
         <meta name="author" content="" /><title></title>
-        <link href="../Stylesheets/StylesForHomePage.css" rel="stylesheet" type="text/css" />
+        <link href="../Stylesheets/StylesforHomePage.css?v=2" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div id="contentBody" class="off-canvas-main">
@@ -57,6 +57,6 @@
         </p>
         <MadCap:snippetBlock src="../Snippets/VersionControl.flsnp" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
     </body>
-    <script src="../_TopNav/_topnav.js">
+    <script src="../_TopNav/_topnav.js?v=2">
     </script>
 </html>

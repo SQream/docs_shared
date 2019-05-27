@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
     <head>
         <meta charset="utf-8" />
         <meta name="description" content="" />
         <meta name="author" content="" /><title></title>
-        <link href="../Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+        <link href="../Stylesheets/MainStyles.css?v=2" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div class="search-container">
@@ -29,9 +29,9 @@
                 </div>
             </div>
         </div>
-        <p><a class="SQreamHomeSite" href="https://sqream.com" target="_blank">SQream.com</a> </p>
+        <p class="copyrightFooter">Copyright © 2010-2019. All rights reserved.</p><a class="SQreamHomeSite" href="https://sqream.com" target="_blank">SQream.com</a>
         <MadCap:snippetBlock src="../Snippets/VersionControl.flsnp" />
     </body>
-    <script src="../_TopNav/_topnav.js">
+    <script src="../_TopNav/_topnav.js?v=2">
     </script>
 </html>

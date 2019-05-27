@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
     <head>
         <meta charset="utf-8" />
@@ -12,10 +12,9 @@
         </div>
         <div class="row collapse">
             <MadCap:bodyProxy />
-        </div>
-        <p><a class="SQreamHomeSite" href="https://sqream.com" target="_blank">SQream.com</a> </p>
+        </div><a class="SQreamHomeSite" href="https://sqream.com" target="_blank">SQream.com</a>
         <MadCap:snippetBlock src="../Snippets/VersionControl.flsnp" />
     </body>
-    <script src="../_TopNav/_topnav.js">
+    <script src="../_TopNav/_topnav.js?v=2">
     </script>
 </html>
