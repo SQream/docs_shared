@@ -3,23 +3,25 @@
   Version="1">
   <TocEntry
     Title="[%=System.LinkedTitle%]"
-    Link="/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/1_Loading_Data_Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    Link="/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/1_Loading_Data_Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    ComputedTocDepth="2">
     <TocEntry
       Title="Overview"
       Link="/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/1_Loading_Data_Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-      StartSection="false" />
+      StartSection="false"
+      ComputedTocDepth="2" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/2_Comparing_import_methods.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Replace"
       ComputeToc="true"
-      ComputedTocDepth="3"
+      ComputedTocDepth="2"
       ReplaceMergeNode="false" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/3_Choosing_the_import_method.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
       ComputedTocAction="Replace"
-      ComputedTocDepth="3" />
+      ComputedTocDepth="2" />
   </TocEntry>
 </CatapultToc>
