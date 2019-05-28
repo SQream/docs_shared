@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PageStyles>
+    <Page Width="800" Height="800" Padding="20px" PageSize="A4" PageType="normal" PaddingRight="2.54cm" PaddingLeft="2.54cm" PaddingTop="2.54cm" PaddingBottom="2.54cm" Name="Copyright">
+        <Frame X="-1px" Y="624px" Width="603px" Height="307px" Flow="body" Right="0px" Bottom="0px" />
+        <Frame X="-96px" Y="-96px" Width="794px" Height="96px" Flow="decoration0" Right="-96px" Bottom="931px" BackgroundType="Solid" BackgroundColor="#0e978f" Anchors="" />
+        <Frame X="-65px" Y="960px" Width="732px" Height="53px" Flow="footer" Right="-65px" Bottom="-82px" BackgroundType="Solid" BackgroundColor="transparent" Anchors="" FlowIndex="1">
+            <Content>
+                <xhtml:html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                    <xhtml:head>
+                    </xhtml:head>
+                    <xhtml:body>
+                        <xhtml:table xhtml:style="width: 100%;">
+                            <xhtml:col xhtml:style="width: 45%;" />
+                            <xhtml:col xhtml:style="width: 10%;" />
+                            <xhtml:col xhtml:style="width: 45%;" />
+                            <xhtml:tbody>
+                                <xhtml:tr>
+                                    <xhtml:td>
+                                        <xhtml:p xhtml:class="FooterLeft"> Version <MadCap:variable xhtml:name="ProductVersions.SQream" /></xhtml:p>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xhtml:p xhtml:class="FooterCenter">- <MadCap:variable xhtml:name="System.PageNumber" /> -</xhtml:p>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xhtml:p xhtml:class="FooterRight"><MadCap:variable xhtml:name="General.DocumentName" />
+                                        </xhtml:p>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xhtml:tbody>
+                        </xhtml:table>
+                    </xhtml:body>
+                </xhtml:html>
+            </Content>
+        </Frame>
+        <Frame X="322px" Y="-65px" Width="280px" Height="43px" Flow="header" Right="0px" Bottom="953px">
+            <Content>
+                <xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                    <xhtml:body>
+                        <xhtml:p xhtml:class="HeaderRight"><MadCap:variable xhtml:name="System.Title" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+                        </xhtml:p>
+                    </xhtml:body>
+                </xhtml:html>
+            </Content>
+        </Frame>
+        <Frame X="0px" Y="-62px" Width="105px" Height="29px" Flow="decoration2" Right="497px" Bottom="964px" BackgroundImage="../Images/Assets/Logos/sqream_logo_white.png" BackgroundRepeat="stretch" Anchors="" FlowIndex="1" />
+    </Page>
+    <Page Width="800" Height="800" Padding="20px" PageSize="A4" PageType="title" PaddingRight="2.54cm" PaddingLeft="2.54cm" PaddingTop="2.54cm" PaddingBottom="2.54cm" Name="Cover">
+        <Frame X="-96px" Y="-96px" Width="794px" Height="167px" Flow="decoration1" Right="-96px" Bottom="860px" BackgroundType="Solid" BackgroundColor="#0e978f" Anchors="" />
+        <Frame X="-96px" Y="406px" Width="794px" Height="284px" Flow="body" Right="-96px" Bottom="241px" Anchors="" FlowIndex="1">
+            <Content>
+                <xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                    <xhtml:body>
+                        <xhtml:p>&#160;</xhtml:p>
+                    </xhtml:body>
+                </xhtml:html>
+            </Content>
+        </Frame>
+        <Frame X="-36px" Y="-33px" Width="207px" Height="55px" Flow="decoration1" Right="431px" Bottom="909px" BackgroundImage="../Images/Assets/Logos/sqream_logo_white.png" BackgroundRepeat="stretch" Anchors="" />
+    </Page>
+</PageStyles>
