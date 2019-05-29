@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="description" content="" />
         <meta name="author" content="" /><title></title>
-        <link href="../Stylesheets/MainStyles.css?v=2" rel="stylesheet" type="text/css" />
+        <link href="../Stylesheets/MainStyles.css?v=[%=Global.BuildTime%]" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div class="search-container">
@@ -30,6 +30,6 @@
 		<p class="copyrightFooter">Copyright © 2010-2019. All rights reserved.</p><a class="SQreamHomeSite" href="https://sqream.com" target="_blank">SQream.com</a>
 		<MadCap:snippetBlock src="../Snippets/VersionControl.flsnp" />
 	</body>
-    <script src="../_TopNav/_topnav.js?v=2">
+    <script src="../_TopNav/_topnav.js?v=[%=Global.BuildTime%]">
     </script>
 </html>

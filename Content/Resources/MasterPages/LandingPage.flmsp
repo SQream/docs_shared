@@ -19,6 +19,6 @@
         <p class="copyrightFooter">Copyright © 2010-2019. All rights reserved.</p><a class="SQreamHomeSite" href="https://sqream.com" target="_blank">SQream.com</a>
         <MadCap:snippetBlock src="../Snippets/VersionControl.flsnp" />
     </body>
-    <script src="../_TopNav/_topnav.js?v=2">
+    <script src="../_TopNav/_topnav.js?v=[%=Global.BuildTime%]">
     </script>
 </html>

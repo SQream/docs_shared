@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet>
+  <Variable
+    Name="BuildTime"
+    Comment=""
+    Type="DateTime"
+    LastUpdated="2019-05-29T20:12:05.5217248+03:00"
+    EvaluatedDefinition="ddMMyyhhmmss">ddMMyyhhmmss</Variable>
+</CatapultVariableSet>

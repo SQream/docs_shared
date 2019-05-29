@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head><title></title>
+        <link href="" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Quick guide to roles and permissions</h1>
+        <p>The following example illustrates how to manage roles and permissions.</p>
+        <p>You are a DBA and the <span class="strong">sqream</span> superuser. You wish to create the following sets of groups to which the <span class="strong">security office</span>r or the <span class="strong">department </span><span class="strong">admin</span><span class="strong">s</span> can assign new users (note that the department admins and the security officer are not superusers): </p>
+        <ul>
+            <li><span class="strong">security office</span>r – role for users who can change roles and permissions</li>
+            <li><span class="strong">database architect</span> – role for users&#160; who can create/modify table structure DDL</li>
+            <li><span class="strong">updater</span> - role for users who can modify tables data (DML)</li>
+            <li><span class="strong">reader</span> - role for users who can read data, execute functions, use views, etc.</li>
+            <li><span class="strong">udf author</span> - role for users who can create User Defined Functions </li>
+        </ul>
+        <p>The example assumes the following:</p>
+        <ul>
+            <li> database is <span class="strong">MYDB</span> </li>
+            <li>schema is <span class="strong">dwh_schema</span></li>
+        </ul>
+        <p><span class="emphasis">As the superuser</span><span class="emphasis">, connect to </span><span class="emphasis">any</span><span class="emphasis"> database and run </span><span class="emphasis">the following:</span>
+        </p>
+        <ol start="1">
+            <li>Create the role <span class="strong">r_security_</span><span class="strong">officer</span><span class="strong"> and</span><span class="strong"> give it the ability</span><span class="strong"> to login and use database MYDB.</span></li>
+        </ol>
+        <div class="code">
+            <p>CREATE ROLE r_security_officer;</p>
+            <p>GRANT LOGIN to r_security_officer;</p>
+            <p>GRANT PASSWORD 'pass' to r_security_officer;</p>
+            <p>GRANT CONNECT ON DATABASE mydb to r_security_officer;</p>
+        </div>
+        <ol start="2">
+            <li>Create the role <span class="strong">r_database_architect</span>  and give it the needed permissions in schema dwh_schema: </li>
+        </ol>
+        <p>Permissions: <span class="strong">USAGE</span>, <span class="strong">CREATE</span> and <span class="strong">DDL</span></p>
+        <div class="code">
+            <p>CREATE ROLE r_database_architect;</p>
+            <p>GRANT connect ON DATABASE mydb TO r_database_architect;</p>
+            <p>GRANT usage,create,ddl ON SCHEMA dwh_schema TO r_database_architect;</p>
+        </div>
+        <ol start="3">
+            <li>Create the role <span class="strong">r_updater</span> and give it the needed permissions in schema dwh_schema on tables created by the <span class="strong">r_database_architect</span>&#160; role group: </li>
+        </ol>
+        <p>Permissions:<span class="strong">SELECT/INSERT/DELETE </span><span class="strong">on ALL </span><span class="strong">tables </span></p>
+        <p>Run <span class="strong">ALTER DEFAULT PERMISSION</span> so that the permission will be granted for new tables in that schema as well.</p>
+        <div class="code">
+            <p>CREATE ROLE r_updater;</p>
+            <p>GRANT connect ON DATABASE mydb TO r_updater;</p>
+            <p>GRANT usage ON SCHEMA dwh_schema TO r_updater;</p>
+            <p>GRANT SELECT,INSERT,DELETE ON ALL TABLES IN SCHEMA dwh_schema TO r_updater;</p>
+            <p>ALTER DEFAULT PERMISSIONS FOR r_database_architect IN dwh_schema FOR TABLES GRANT SELECT,INSERT,DELETE TO r_updater;</p>
+        </div>
+        <ol start="4">
+            <li><span class="strong">Create the r</span><span class="strong">ol</span>e <span class="strong">r_udf_author</span> and give it the needed permissions.</li>
+        </ol>
+        <p>Permissions:</p>
+        <ul>
+            <li><span class="strong">SELECT</span> on <span class="strong">all the tables</span> in schema <span class="strong">dwh_schema</span> </li>
+            <li><span class="strong">CREATE FUNCTION</span><span class="strong">S</span> (UDF)</li>
+        </ul>
+        <p>Run <span class="strong">ALTER DEFAULT PERMISSION</span> so that the permission will be granted for new tables in that schema as well.&#160; </p>
+        <div class="code">
+            <p>CREATE ROLE r_udf_author;</p>
+            <p>GRANT connect ON DATABASE mydb TO r_udf_author;</p>
+            <p>GRANT usage ON SCHEMA dwh_schema TO r_udf_author;</p>
+            <p>GRANT CREATE FUNCTION ON DATABASE mydb TO r_udf_author;</p>
+            <p>GRANT SELECT ON ALL TABLES IN SCHEMA dwh_schema TO r_udf_author;</p>
+            <p>ALTER DEFAULT PERMISSIONS FOR r_database_architect IN dwh_schema FOR TABLES GRANT SELECT TO r_udf_author;</p>
+        </div>
+        <ol start="5">
+            <li>Create the role <span class="strong">r_r</span>eader and give it the needed permissions in schema dwh_schema on tables created by the <span class="strong">r_database_architect</span>&#160; role group: </li>
+        </ol>
+        <p>Permissions:</p>
+        <ul>
+            <li><span class="strong">SELECT</span> on <span class="strong">all the tables</span> in schema <span class="strong">dwh_schema</span> </li>
+            <li><span class="strong">EXECUTE ALL FUNCTION</span><span class="strong">S</span> (UDFs)</li>
+        </ul>
+        <p>Run <span class="strong">ALTER DEFAULT PERMISSION</span> so that the permission will be granted for new tables in that schema as well.&#160; </p>
+        <div class="code">
+            <p>CREATE ROLE r_reader;</p>
+            <p>GRANT connect ON DATABASE mydb TO r_reader;</p>
+            <p>GRANT usage ON SCHEMA dwh_schema TO r_reader;</p>
+            <p>GRANT SELECT ON ALL TABLES IN SCHEMA dwh_schema TO r_reader;</p>
+            <p>ALTER DEFAULT PERMISSIONS FOR r_database_architect IN dwh_schema FOR TABLES GRANT SELECT TO r_reader;</p>
+            <p>GRANT EXECUTE ON ALL FUNCTIONS TO r_reader;</p>
+        </div>
+        <p class="note"><span class="strong">GRANT </span><span class="strong">EXECUTE FUCTION </span><span class="strong">a</span><span class="strong">ffect</span><span class="strong">s</span><span class="strong"> only existing functions. </span>
+        </p>
+        <ol start="6">
+            <li>Give the role <span class="strong">r_security_officer</span> the ability to grant all the new roles to others: </li>
+        </ol>
+        <div class="code">
+            <p>GRANT r_database_architect TO r_security_officer WITH ADMIN OPTION;</p>
+            <p>GRANT r_updater TO r_security_officer WITH ADMIN OPTION;</p>
+            <p>GRANT r_reader TO r_security_officer WITH ADMIN OPTION;</p>
+            <p>GRANT r_udf_author TO r_security_officer WITH ADMIN OPTION;</p>
+        </div>
+        <p><span class="emphasis">At this </span><span class="emphasis">point, the</span> <span class="emphasis">security officer (</span><span class="emphasis">who is </span><span class="emphasis">not </span><span class="emphasis">a </span><span class="emphasis">superuser) can gran</span><span class="emphasis">t </span><span class="emphasis">any of the roles they</span><span class="emphasis"> were defined as admin of to any new users created by the superuser (role with login/password).</span></p><span class="emphasis">As a superuser:</span>
+        <ol start="1">
+            <li>Create the roles user1, user2, user3 etc. </li>
+        </ol>
+        <div class="code">
+            <p>CREATE ROLE user1;</p>
+            <p>GRANT LOGIN to user1;</p>
+            <p>GRANT PASSWORD 'pass1' to user1;</p>
+            <p>CREATE ROLE user2;</p>
+            <p>GRANT LOGIN to user2;</p>
+            <p>GRANT PASSWORD 'pass2' to user2;</p>
+            <p>CREATE ROLE user3;</p>
+            <p>GRANT LOGIN to user3;</p>
+            <p>GRANT PASSWORD 'pass3' to user3;</p>
+            <p>CREATE ROLE user4;</p>
+            <p>GRANT LOGIN to user4;</p>
+            <p>GRANT PASSWORD 'pass4' to user4;</p>
+        </div><span class="emphasis">As the security officer:</span>
+        <div class="code">
+            <p>GRANT r_database_architect TO user1;</p>
+            <p>GRANT r_reader TO user2;</p>
+            <p>GRANT r_udf_author TO user3;</p>
+            <p>GRANT r_updater TO user4;</p>
+        </div>
+        <p>Note that the ‘with admin option’ can be used in hierarchy. For example, if each department wishes to have its own dept_admin role, the superuser can create this role and grant it the required permissions with admin option so they can then assign the roles to users in their department.</p>
+        <p><span class="strong">Hierarchy example:</span>
+        </p>
+        <ol start="1">
+            <li>As superuser:</li>
+        </ol>
+        <div class="code">
+            <p>CREATE ROLE dept1_admin;</p>
+            <p>GRANT LOGIN TO dept1_admin;</p>
+            <p>GRANT PASSWORD 'password' TO dept1_admin;</p>
+            <p>GRANT CONNECT ON DATABASE mydb TO dept1_admin;</p>
+        </div>
+        <ol start="2">
+            <li>As the security officer or superuser:</li>
+        </ol>
+        <div class="code">
+            <p>GRANT r_reader TO dept1_admin WITH ADMIN OPTION;</p>
+        </div>
+        <ol start="3">
+            <li>As the dept1_admin:</li>
+        </ol>
+        <div class="code">
+            <p>GRANT r_reader TO user2;</p>
+        </div>
+    </body>
+</html>
