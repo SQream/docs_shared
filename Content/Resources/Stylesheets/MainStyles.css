@@ -1024,6 +1024,27 @@ Styles after this point are styles that are for specific mediums. If any additio
 		padding-top: 10pt;
 	}
 
+	table pre {
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		overflow: auto;
+	}
+
+	table {
+		word-wrap: break-word;
+		page-break-inside: avoid;
+	}
+
+	div.code {
+		page-break-inside: avoid;
+	}
+
+	.admonitionblock.note,
+	.admonitionblock.tip,
+	.admonitionblock.warning {
+		page-break-inside: avoid;
+	}
+
 	h1, h2, h3, h4, h5, h6 {
 		padding-top: 0pt;
 	}
