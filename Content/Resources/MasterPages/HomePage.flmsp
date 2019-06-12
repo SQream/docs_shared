@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="description" content="" />
         <meta name="author" content="" /><title></title>
-        <link href="../Stylesheets/StylesforHomePage.css?v=[%=Global.BuildTime%]" rel="stylesheet" type="text/css" />
+        <link href="../Stylesheets/stylesforhomepage.css?v=[%=Global.BuildTime%]" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div id="contentBody" class="off-canvas-main">

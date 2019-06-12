@@ -42,7 +42,7 @@
                 </xhtml:html>
             </Content>
         </Frame>
-        <Frame X="0px" Y="-62px" Width="105px" Height="29px" Flow="decoration2" Right="497px" Bottom="964px" BackgroundImage="../Images/Assets/Logos/sqream_logo_white.png" BackgroundRepeat="stretch" Anchors="" FlowIndex="1" />
+        <Frame X="0px" Y="-62px" Width="105px" Height="29px" Flow="decoration2" Right="497px" Bottom="964px" BackgroundImage="../../Print_Common_Files/Images/sqream_cover_logo.png" BackgroundRepeat="stretch" Anchors="" FlowIndex="1" />
     </Page>
     <Page Width="800" Height="800" Padding="20px" PageSize="A4" PageType="title" PaddingRight="2.54cm" PaddingLeft="2.54cm" PaddingTop="2.54cm" PaddingBottom="2.54cm" Name="Cover">
         <Frame X="-96px" Y="-96px" Width="794px" Height="167px" Flow="decoration1" Right="-96px" Bottom="860px" BackgroundType="Solid" BackgroundColor="#0e978f" Anchors="" />
@@ -55,6 +55,6 @@
                 </xhtml:html>
             </Content>
         </Frame>
-        <Frame X="-36px" Y="-33px" Width="207px" Height="55px" Flow="decoration1" Right="431px" Bottom="909px" BackgroundImage="../Images/Assets/Logos/sqream_logo_white.png" BackgroundRepeat="stretch" Anchors="" />
+        <Frame X="-36px" Y="-33px" Width="207px" Height="55px" Flow="decoration1" Right="431px" Bottom="909px" BackgroundImage="../../Print_Common_Files/Images/sqream_cover_logo.png" BackgroundRepeat="stretch" Anchors="" />
     </Page>
 </PageStyles>
