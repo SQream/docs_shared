@@ -42,6 +42,6 @@
                 </xhtml:html>
             </Content>
         </Frame>
-        <Frame X="0px" Y="-62px" Width="105px" Height="29px" Flow="decoration2" Right="497px" Bottom="964px" BackgroundImage="../Images/Assets/Logos/sqream_logo_white.png" BackgroundRepeat="stretch" Anchors="" FlowIndex="1" />
+        <Frame X="0px" Y="-62px" Width="105px" Height="29px" Right="497px" Bottom="964px" BackgroundImage="../../Print_Common_Files/Images/sqream_cover_logo.png" BackgroundRepeat="stretch" Anchors="" FlowIndex="1" Flow="decoration" BackgroundColor="transparent" />
     </Page>
 </PageStyles>

@@ -6,4 +6,10 @@
     Type="DateTime"
     LastUpdated="2019-05-29T20:12:05.5217248+03:00"
     EvaluatedDefinition="ddMMyyhhmmss">ddMMyyhhmmss</Variable>
+  <Variable
+    Name="Year"
+    Comment=""
+    Type="DateTime"
+    LastUpdated="2019-06-16T20:51:02.6561691+03:00"
+    EvaluatedDefinition="yyyy">yyyy</Variable>
 </CatapultVariableSet>
