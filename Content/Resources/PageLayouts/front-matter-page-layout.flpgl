@@ -32,11 +32,11 @@
                 </xhtml:html>
             </Content>
         </Frame>
-        <Frame X="322px" Y="-65px" Width="280px" Height="43px" Flow="header" Right="0px" Bottom="953px">
+        <Frame X="105px" Y="-68px" Width="497px" Height="43px" Flow="header" Right="0px" Bottom="956px">
             <Content>
                 <xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml">
                     <xhtml:body>
-                        <xhtml:p xhtml:class="HeaderRight"><MadCap:variable xhtml:name="Heading.Level1" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+                        <xhtml:p xhtml:class="HeaderRight"><MadCap:variable xhtml:name="Heading.AnyLevel" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
                         </xhtml:p>
                     </xhtml:body>
                 </xhtml:html>
