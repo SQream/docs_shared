@@ -36,7 +36,7 @@
             <Content>
                 <xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml">
                     <xhtml:body>
-                        <xhtml:p xhtml:class="HeaderRight"><MadCap:variable xhtml:name="System.Title" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+                        <xhtml:p xhtml:class="HeaderRight"><MadCap:variable xhtml:name="Heading.Level1" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
                         </xhtml:p>
                     </xhtml:body>
                 </xhtml:html>

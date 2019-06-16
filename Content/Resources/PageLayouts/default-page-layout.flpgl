@@ -36,12 +36,12 @@
             <Content>
                 <xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml">
                     <xhtml:body>
-                        <xhtml:p xhtml:class="HeaderRight"><MadCap:variable xhtml:name="System.Title" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+                        <xhtml:p xhtml:class="HeaderRight"><MadCap:variable xhtml:name="Heading.Level1" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
                         </xhtml:p>
                     </xhtml:body>
                 </xhtml:html>
             </Content>
         </Frame>
-        <Frame X="0px" Y="-62px" Width="105px" Height="29px" Right="497px" Bottom="964px" BackgroundImage="../../Print_Common_Files/Images/sqream_cover_logo.png" BackgroundRepeat="stretch" Anchors="" FlowIndex="1" Flow="decoration" BackgroundColor="transparent" />
+        <Frame X="0px" Y="-62px" Width="105px" Height="29px" Right="497px" Bottom="964px" BackgroundImage="../../Print_Common_Files/Images/sqream_cover_logo.png" BackgroundRepeat="stretch" Anchors="" FlowIndex="1" Flow="decoration0" BackgroundColor="transparent" />
     </Page>
 </PageStyles>

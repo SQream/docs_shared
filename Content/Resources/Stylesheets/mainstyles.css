@@ -50,6 +50,7 @@ h2
 	font-size: 1.63rem;
 	font-weight: bold;
 	padding-top: 36px;
+	page-break-before: auto;
 	margin-top: 0;
 	margin-bottom: 10px;
 /*	mc-auto-number-format: 'CH: {chapnum}. ';*/
@@ -62,6 +63,7 @@ h3
 	font-size: 1.27rem;
 	font-weight: bold;
 	padding-bottom: 0px;
+	page-break-before: auto;
 	margin-bottom: 10px;
 	padding-top: 36px;
 	margin-top: 0;
@@ -80,6 +82,7 @@ h4
 	font-weight: bold;
 	margin-bottom: 10px;
 	margin-top: 0px;
+	page-break-before: auto;
 	/* for breadcrumb fix*/ padding-top: 36px;
 /*	mc-auto-number-format: 'CH: {chapnum}.{n}.{n+}. ';*/
 }
@@ -88,6 +91,7 @@ h4.Quick {
 	color: black;
 	margin-top: 16px;
 	padding-top: 0px;
+	page-break-before: auto;
 }
 
 h5
@@ -99,6 +103,7 @@ h5
 	margin-bottom: 0px;
 	margin-top: 0px;
 	padding-top: 36px;
+	page-break-before: auto;
 }
 
 h6
@@ -109,6 +114,7 @@ h6
 	margin-bottom: 0px;
 	margin-top:0px;
 	padding-top: 36px;
+	page-break-before: auto;
 }
 
 li.heading2
@@ -271,6 +277,45 @@ p.tableHeader
 	font-size: 1.09rem;
 	margin-bottom: 4px;
 	margin-top: 0px;
+}
+
+p.Header {
+	color: white;
+	text-align:right;
+	padding-top: 4pt;
+}
+
+p.HeaderRight {
+	text-align: right;
+	color: white;
+}
+
+p.Footer {
+	text-align: center;
+	color: #0e978f;
+	font-weight: bold;
+	padding-top: 10pt;
+}
+
+p.FooterCenter {
+	text-align: center;
+	color: #0e978f;
+	font-weight: bold;
+	padding-top: 10pt;
+}
+
+p.FooterLeft {
+	text-align: left;
+	color: #0e978f;
+	font-weight: bold;
+	padding-top: 10pt;
+}
+
+p.FooterRight {
+	text-align: right;
+	color: #0e978f;
+	font-weight: bold;
+	padding-top: 10pt;
 }
 
 p.tablecaption,
@@ -1017,8 +1062,34 @@ Styles after this point are styles that are for specific mediums. If any additio
 		padding-top: 4pt;
 	}
 
+	p.HeaderRight {
+		text-align: right;
+		color: white;
+	}
+
 	p.Footer {
 		text-align: center;
+		color: #0e978f;
+		font-weight: bold;
+		padding-top: 10pt;
+	}
+
+	p.FooterCenter {
+		text-align: center;
+		color: #0e978f;
+		font-weight: bold;
+		padding-top: 10pt;
+	}
+
+	p.FooterLeft {
+		text-align: left;
+		color: #0e978f;
+		font-weight: bold;
+		padding-top: 10pt;
+	}
+
+	p.FooterRight {
+		text-align: right;
 		color: #0e978f;
 		font-weight: bold;
 		padding-top: 10pt;
@@ -1032,7 +1103,6 @@ Styles after this point are styles that are for specific mediums. If any additio
 
 	table {
 		word-wrap: break-word;
-		page-break-inside: avoid;
 	}
 
 	div.code {
