@@ -150,7 +150,6 @@ p.body
 p.leftBig {
 	font-size: 1.5rem;
 	font-weight: bold;
-	line-height: 2rem;
 }
 
 p.code
@@ -1032,6 +1031,17 @@ Styles after this point are styles that are for specific mediums. If any additio
 
 @media print
 {
+
+	a:link
+	{
+		color: black;
+		text-decoration: none;
+	}
+	
+	a:visited {
+		color: black;
+		text-decoration: none;
+	}
 
 	body {
 		font-size: 12pt;
