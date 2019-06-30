@@ -1170,7 +1170,7 @@ Styles after this point are styles that are for specific mediums. If any additio
 	}
 
 	div.code {
-		page-break-inside: avoid;
+		/*page-break-inside: avoid;*/
 	}
 
 	div.code pre {
@@ -1182,7 +1182,7 @@ Styles after this point are styles that are for specific mediums. If any additio
 	.admonitionblock.warning {
 		page-break-inside: avoid;
 	}
-	
+
 	h1, h2, h3, h4, h5, h6 {
 		padding-top: 0pt;
 		page-break-after: avoid;
