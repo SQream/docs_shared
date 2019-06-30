@@ -172,6 +172,8 @@ p.copyrightFooter {
     left: 0;
 }
 
+
+
 span.colorBoldItalic
 {
 	color: #0e978f;
@@ -358,30 +360,88 @@ p.toDo
 	font-weight: bold;
 }
 
-.admonitionblock.note,
+/* Note divs*/
+
+/*.admonitionblock.note,
 .admonitionblock.tip,
 .admonitionblock.warning
 {
 	background-position-x: 15px;
-}
+}*/
 
 .admonitionblock table,
 .admonitionblock .TableStyle-Default_Table td
 {
 	border: none;
-	background-color: white;
+	background-color: transparent;
+	margin-left: 0;
+	padding-left: 0;
 	margin-bottom: 0;
 }
 
-.admonitionblock table p,
+/*.admonitionblock table p,
 .admonitionblock table li
 {
 	font-size: 1rem;
+}*/
+
+
+
+div.note:before, div.tip:before, div.warning:before {
+	font-size: 14pt;
+	font-weight: bold;
+	margin: 0;
+	padding: 0 0 4pt 0;
+	text-transform: uppercase;
+	top: 100px;
+	left: 10px;
 }
 
-div.tip,
-div.info,
-div.note,
+div.note:before{
+color: rgb(91, 155, 213);
+content: 'Note:';
+display: block;
+}
+
+div.warning:before{
+color: red;
+content: 'Warning:';
+display: block;
+	}
+
+div.tip:before{
+color: rgb(0,128,128);
+content: 'Tip:';
+display: block;
+}
+
+div.note {
+background-color: #deeaf6;
+border-left: solid 6pt rgb(46,116,181);
+}
+
+div.tip {
+background-color: rgb(216,235,236);
+border-left: solid 6pt rgb(0,128,128);
+}
+
+div.warning {
+background-color: rgb(251,228,213);
+border-left: solid 6pt red;
+}
+
+div.note, div.tip,
+div.warning, div.note p, div.note ul, div.note ol, div.tip p, div.tip ul, div.tip ol, div.warning p, div.warning ul, div.warning ol {
+	font-size: 11pt;
+	line-height: 1rem;
+	min-height: 60px;
+	padding-left: 10px;
+	padding-top: 4pt;
+	padding-bottom: 4pt;
+	margin-bottom: 10pt;
+}
+
+/*
 div.warning
 {
 	background-repeat: no-repeat;
@@ -393,21 +453,10 @@ div.warning
 	padding-bottom: 14px;
 }
 
-div.tip
-{
-	background-image: url('../Images/Assets/Icons/tip.png');
-}
-
-div.info,
-div.note
-{
-	background-image: url('../Images/Assets/Icons/info.png');
-}
-
 div.warning
 {
 	background-image: url('../Images/Assets/Icons/warning.png');
-}
+}*/
 
 span.codeCH,
 code
@@ -1047,6 +1096,11 @@ Styles after this point are styles that are for specific mediums. If any additio
 		font-size: 12pt;
 	}
 
+	caption.title
+	{
+		white-space: normal;
+	}
+
 	p.DocTitle {
 		color: #0e978f;
 		font-size: 3rem;
@@ -1119,14 +1173,19 @@ Styles after this point are styles that are for specific mediums. If any additio
 		page-break-inside: avoid;
 	}
 
+	div.code pre {
+		padding-right: 30pt;
+	}
+
 	.admonitionblock.note,
 	.admonitionblock.tip,
 	.admonitionblock.warning {
 		page-break-inside: avoid;
 	}
-
+	
 	h1, h2, h3, h4, h5, h6 {
 		padding-top: 0pt;
+		page-break-after: avoid;
 	}
 
 }
