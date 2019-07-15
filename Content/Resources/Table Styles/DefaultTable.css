@@ -22,7 +22,7 @@ mcTableStyle
 	cell-padding-left: 7px;
 	cell-padding-right: 7px;
 	margin-bottom: 20px;
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 mcTableColumnStyle
@@ -96,7 +96,7 @@ mcTableBodyStyle
 	border-bottom-style: solid;
 	border-bottom-color: #0e978f;
 	border-bottom-width: 1px;
-	margin-top: 10px;
+	margin-top: 20px;
 	margin-bottom: 20px;
 	border-spacing: 0px 0px;
 }

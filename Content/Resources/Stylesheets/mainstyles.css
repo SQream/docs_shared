@@ -381,20 +381,23 @@ p.toDo
 }*/
 
 .admonitionblock table,
-.admonitionblock .TableStyle-Default_Table td
+.admonitionblock .TableStyle-Default_Table tr
 {
 	border: none;
-	background-color: transparent;
+	background: transparent!important;
 	margin-left: 0;
 	padding-left: 0;
 	margin-bottom: 0;
 }
 
-/*.admonitionblock table p,
-.admonitionblock table li
+.admonitionblock table ul li p,
+.admonitionblock table ul li
 {
-	font-size: 1rem;
-}*/
+	padding-top: 0px;
+	padding-bottom: 4px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
 
 div.note:before,
 div.tip:before,
@@ -1075,11 +1078,6 @@ div.code .pygments .tok-si
 {
 	font-weight: bold;
 	mc-hidden: hidden;
-}
-
-table
-{
-	padding-top: 10px;
 }
 
 /*===========================================================================================================================================================
