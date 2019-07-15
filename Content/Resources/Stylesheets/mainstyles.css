@@ -1077,6 +1077,11 @@ div.code .pygments .tok-si
 	mc-hidden: hidden;
 }
 
+table
+{
+	padding-top: 10px;
+}
+
 /*===========================================================================================================================================================
 Styles after this point are styles that are for specific mediums. If any additional styles are added to this template they will be listed after mediums.
 [@media tablet] declares styles that will apply when the screen is in tablet view
