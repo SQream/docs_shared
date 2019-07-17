@@ -406,7 +406,7 @@ div.warning:before
 	font-size: 14pt;
 	font-weight: bold;
 	margin: 0;
-	padding: 4pt 0;
+	padding: 8pt 0 4pt 0;
 	text-transform: uppercase;
 	top: 100px;
 	left: 10px;
