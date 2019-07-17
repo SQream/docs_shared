@@ -8,11 +8,10 @@
             <li>SQream is intended for big data.
 			<p>For better performance,  load in large bulks. Best loads will be in multiples of the chunk size (default = 1 million rows).</p></li>
             <li>Take advantage of data skipping.
-			<p>Due to the metadata that SQream keeps on the existing data, SQream can often do data skipping and eliminate wasted IO/GPU time.
+			<p><br />Due to the metadata that SQream keeps on the existing data, SQream can often do data skipping and eliminate wasted IO/GPU time.
 			</p><p>For better data skipping, sort the loaded data on the main columns you intend to filter in your queries, either before the load (in case of copy) or during (in case of insert/create as 'select from external table').
 			</p><p>Sorting the data will also be relevant for delete operations; if the data is fully/mostly sorted by the delete key column, the physical cleanup will be faster and use fewer resources.
-			</p></li>
+</p><div class="note">SQream is optimized in such a way that sort during insert (command <span class="codeCH">INSERT INTO|CREATE table &lt;AS&gt; SELECT … FROM .. ORDER BY &lt;column_list&gt;</span>) will do a partial and faster sort based on the O/S RAM without using extra I/O.</div></li>
         </ul>
-        <div class="note">SQream is optimized in such a way that sort during insert (command <span class="codeCH">INSERT INTO|CREATE table &lt;AS&gt; SELECT … FROM .. ORDER BY &lt;column_list&gt;</span>) will do a partial and faster sort based on the O/S RAM without using extra I/O.</div>
     </body>
 </html>

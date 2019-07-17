@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('../../../Resources/MasterPages/Guides.flmsp');">
+    <head>
+    </head>
+    <body>
+        <h2>Query Processing and SQL Usage</h2>
+        <ul>
+            <li>Joins: To take advantage of GPU utilization, consider writing the queries in a way that allows reducing the fact tables before the join operation.
+				<p class="example">Example</p><div class="code"><p>Example query: </p><p>&#160;</p><p>select  store_name, sum(amount) 
+from dimention dim join fact on dim.store_id=fact.store_id 
+where p_date between '2018-07-01' and '2018-07-31'</p><p>group by  store_name;</p><p></p><p><span class="strong">Recommended query syntax to reduce fact table:</span> 
+select store_name, sum_amount
+from dimention as dim inner join
+	(select sum(amount) as sum_amount, store_id
+	from fact
+	where p_date between '2018-07-01' and '2018-07-31'
+	group by store_id
+		) as fact
+on dim.store_id=fact.store_id;			</p></div></li>
+            <li>Use high selectivity hint when filtering out most of the table on a non-sorted column. See
+<a href="../../../SQL_Reference_Guide/20_2.5_Manual_Query_Tuning.htm#WHERE">WHERE with HIGH_SELECTIVITY	</a></li>
+            <li>
+				Due to the metadata that SQream keeps on the existing data, SQream can often do data skipping and and eliminate wasted IO/GPU time.
+				<p>For better data skipping, increase the use of sargable conditions to do as much filtering as possible in the WHERE clause: (=,&gt;, &lt;, &gt;=, &lt;=, BETWEEN, LIKE, IS [NOT] NULL, EXISTS, IN).
+				</p></li>
+            <li>Whenever possible, use '<span class="codeCH">select count(*)</span>' rather than '<span class="codeCH">select count(column_name)</span>'
+				<p><span class="codeCH">count(*)</span> allows SQream to read the metadata and to avoid unecessary calculations.
+				</p><p>Please note that in SQream the metadata is always up-to-date and there is no need to gather statistics.
+ 			       </p><p class="example">Example</p><div class="code"><p>&gt; select count(*) from big</p><p>85598208</p><p>1 row</p><p>time: 0.065940s				</p></div></li>
+            <li>Query only the columns you need (unlike <span class="codeCH">select * from</span>).
+				<p>Since SQream is a columnar database, it will load all the columns in the statement.</p><p class="example">Example</p><div class="code"><p>Assuming the table has 20 columns and you need only 4:</p><p>&#160;</p><p>Select col1, col2, col10 from my_table</p><p>where col7='my_predicate';	</p><p></p></div></li>
+            <li>Fetch time can be expensive. If many uneeded rows  are likely to be returned, add '<span class="codeCH">TOP N</span>' to the query.
+				<div class="note"><span class="codeCH">TOP N</span> is applied only at the fetch time, after the full run is finished. It does not affect run time.</div><p class="example">Example</p><div class="code"><p>Select top 100 col1, col2, col10</p><p>from my_table</p><p>where col7='my_predicate';			</p></div></li>
+            <li>Functions on integers return a rounded integer.
+				<p>For mathematical operations on integers, use either use <span class="codeCH">CAST TO FLOAT</span> or a decimal number.</p><p class="example">Example</p><div class="code"><p>Calculate how much is 77% out of 500:</p><p>&#160;</p><p>
+Select cast(500 as float)/77*100 ;</p><p>Or</p><p>Select 500/77.0*100;</p></div></li>
+            <li>
+                <p>For large queries (multiple joins etc), consider using saved queries to save compilation time. Note that saved queries can use variables. See <a href="../../../SQL_Reference_Guide/1_Overview.htm">SQream SQL Reference Guide</a> for saved queries examples, usage and limitations.</p>
+            </li>
+        </ul>
+    </body>
+</html>

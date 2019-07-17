@@ -406,7 +406,7 @@ div.warning:before
 	font-size: 14pt;
 	font-weight: bold;
 	margin: 0;
-	padding: 0 0 4pt 0;
+	padding: 4pt 0;
 	text-transform: uppercase;
 	top: 100px;
 	left: 10px;
@@ -453,6 +453,13 @@ div.warning
 
 div.note,
 div.tip,
+div.warning {
+	min-height: 60px;
+	margin-top: 4px;
+}
+
+div.note,
+div.tip,
 div.warning,
 div.note p,
 div.note ul,
@@ -466,7 +473,6 @@ div.warning ol
 {
 	font-size: 11pt;
 	line-height: 1rem;
-	min-height: 60px;
 	padding-left: 10px;
 	padding-bottom: 4pt;
 	margin-bottom: 10pt;
