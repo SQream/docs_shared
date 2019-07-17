@@ -25,7 +25,7 @@
 			</li>
             <li>
 				Due to the metadata that SQream keeps on the existing data, SQream can often do data skipping and and eliminate wasted IO/GPU time.
-				<p>For better data skipping increase the use in sargable conditions at the WHERE clause: =,&gt;, &lt;, &gt;=, &lt;=, BETWEEN, LIKE, IS [NOT] NULL, EXISTS, IN
+				<p>For better data skipping, increase the use of sargable conditions to do as much filtering as possible in the WHERE clause: (=,&gt;, &lt;, &gt;=, &lt;=, BETWEEN, LIKE, IS [NOT] NULL, EXISTS, IN).
 				</p></li>
             <li>Whenever possible, use '<span class="codeCH">select count(*)</span>' rather than '<span class="codeCH">select count(column_name)</span>'
 				<p><span class="codeCH">count(*)</span> allows SQream to read the metadata and to avoid unecessary calculations.
