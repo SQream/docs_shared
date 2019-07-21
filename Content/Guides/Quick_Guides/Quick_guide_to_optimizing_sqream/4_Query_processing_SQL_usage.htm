@@ -22,7 +22,13 @@ on dim.store_id=fact.store_id;			</p></div></li>
             <li>
 				Due to the metadata that SQream keeps on the existing data, SQream can often do data skipping and and eliminate wasted IO/GPU time.
 				<p>For better data skipping, increase the use of sargable conditions to do as much filtering as possible in the WHERE clause: (=,&gt;, &lt;, &gt;=, &lt;=, BETWEEN, LIKE, IS [NOT] NULL, EXISTS, IN).
-				</p></li>
+</p></li>
+            <li>
+                <p>When using INT or smaller datatype, CAST large results (such as SUM) to BIGINT to avoid overflows:</p>
+                <div class="code">
+                    <p>Select sum(cast(my_int_column as bigint)) from table;</p>
+                </div>
+            </li>
             <li>Whenever possible, use '<span class="codeCH">select count(*)</span>' rather than '<span class="codeCH">select count(column_name)</span>'
 				<p><span class="codeCH">count(*)</span> allows SQream to read the metadata and to avoid unecessary calculations.
 				</p><p>Please note that in SQream the metadata is always up-to-date and there is no need to gather statistics.
