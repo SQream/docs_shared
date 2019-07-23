@@ -8,224 +8,202 @@
         <p MadCap:conditions="General.Web_Only"><a href="Built_PDFs/FAQ.pdf">Download as PDF</a>
         </p>
         <h2>ANSI SQL</h2>
-        <MadCap:dropDown>
-            <MadCap:dropDownHead>
-                <MadCap:dropDownHotspot>
-                    <h3>What version of ANSI SQL does SQream support?</h3>
-                </MadCap:dropDownHotspot>
-            </MadCap:dropDownHead>
-            <MadCap:dropDownBody>
-                <p>SQream is mostly based on ANSI 92. </p>
-            </MadCap:dropDownBody>
-        </MadCap:dropDown>
-        <MadCap:dropDown>
-            <MadCap:dropDownHead>
-                <MadCap:dropDownHotspot>
-                    <h3>Which functions are supported?</h3>
-                </MadCap:dropDownHotspot>
-            </MadCap:dropDownHead>
-            <MadCap:dropDownBody>
-                <p>A full listing of the supported functions can be found in the <a href="../../../Web/SQream/Content/SQL_Reference_Guide/1_Overview.htm">SQream SQL Reference Guide</a>.</p>
-            </MadCap:dropDownBody>
-        </MadCap:dropDown>
-        <MadCap:dropDown>
-            <MadCap:dropDownHead>
-                <MadCap:dropDownHotspot>
-                    <h3>Does SQREAM support the UPDATE command?</h3>
-                </MadCap:dropDownHotspot>
-            </MadCap:dropDownHead>
-            <MadCap:dropDownBody>
-                <p>Currently, SQream does not support the UPDATE command since it would have limited usefulness in the SQream context. SQream is used mainly to load and analyze data, and then once the data is no longer needed, to remove/delete it. </p>
-                <p>We offer our customers the ability to track all changes (as opposed to simply storing only the latest status). You can also easily retrieve either all changes (to find data changes) or just the most recent/ most up-to-date change (for the current status). </p>
-            </MadCap:dropDownBody>
-        </MadCap:dropDown>
-        <h2>Architecture</h2>
-        <MadCap:dropDown>
-            <MadCap:dropDownHead>
-                <MadCap:dropDownHotspot>
-                    <h3>Can SQream be containerized? Is it easy to do?</h3>
-                </MadCap:dropDownHotspot>
-            </MadCap:dropDownHead>
-            <MadCap:dropDownBody>
-                <p>SQream DB software can run inside Docker containers.</p>
-                <p>SQream cluster storage (the data itself) should be persistent and external to the container in a shared storage device.</p>
-            </MadCap:dropDownBody>
-        </MadCap:dropDown>
-        <MadCap:dropDown>
-            <MadCap:dropDownHead>
-                <MadCap:dropDownHotspot>
-                    <h3>What maintenance is required for the SQream DB?</h3>
-                </MadCap:dropDownHotspot>
-            </MadCap:dropDownHead>
-            <MadCap:dropDownBody>
-                <p>The only maintenance that you need to perform in SQream is to physically delete rows that were already logically deleted via the <a href="http://docs.sqream.com/latest/manual/Content/SQL_Reference_Guide/17_2.2_Data_Manipulation_Language.htm#DELETE_..460?TocPath=SQream%20DB%20%20SQL%20Reference%20Guide|Data%20Manipulation%20Language|_____5">DELETE</a> command (drop partition).</p>
-                <p>Ease-of-use is one of the most important features of SQream! Our technology was developed specifically to avoid the time-consuming maintenance operations that are typically necessary with traditional databases.</p>
-            </MadCap:dropDownBody>
-        </MadCap:dropDown>
-        <MadCap:dropDown>
-            <MadCap:dropDownHead>
-                <MadCap:dropDownHotspot>
-                    <h3>How do I backup SQream DB?</h3>
-                </MadCap:dropDownHotspot>
-            </MadCap:dropDownHead>
-            <MadCap:dropDownBody>
-                <p>The SQream DB is always synced on disk. You should backup SQream storage with a snapshot-equivalent methodology. You can do the backup online if your tool supports instant backup. </p>
-                <p>If no instant backup tool/software exists, the backup should be done while all SQream instances are down. </p>
-            </MadCap:dropDownBody>
-        </MadCap:dropDown>
-        <h2>Connectivity</h2>
-        <MadCap:dropDown>
-            <MadCap:dropDownHead>
-                <MadCap:dropDownHotspot>
-                    <h3>Which tools (like Tableau) can be integrated with the database? Is it native or is customization required?</h3>
-                </MadCap:dropDownHotspot>
-            </MadCap:dropDownHead>
-            <MadCap:dropDownBody>
-                <p>Any visualization tools that can connect via SQream drivers (JDBC/ODBC etc.) can work with SQream. Please see the full drivers list <a href="../../../Web/SQream/Content/Drivers/Drivers.htm">here</a>. </p>
-            </MadCap:dropDownBody>
-        </MadCap:dropDown>
-        <MadCap:dropDown>
-            <MadCap:dropDownHead>
-                <MadCap:dropDownHotspot>
-                    <h3>Can SQream listen &amp; receive from Kafka as a Subscriber/Publisher?</h3>
-                </MadCap:dropDownHotspot>
-            </MadCap:dropDownHead>
-            <MadCap:dropDownBody>
-                <p>In Kafka we have two relevant connectors:</p>
-                <ul style="list-style-type: disc;margin-left: 18pt;">
-                    <li style="list-style-type: disc;">'source connector': writes into Kafka topics</li>
-                    <li style="list-style-type: disc;">'sink connector':&#160; reads from Kafka topics</li>
-                </ul>
-                <p>Currently SQream uses the Confluent JDBC sink/source connectors to read/write topics via our JDBC driver and writing them into SQream. </p>
-            </MadCap:dropDownBody>
-        </MadCap:dropDown>
-        <MadCap:dropDown>
-            <MadCap:dropDownHead>
-                <MadCap:dropDownHotspot>
-                    <h3>What data types are supported in a Parquet external table?</h3>
-                </MadCap:dropDownHotspot>
-            </MadCap:dropDownHead>
-            <MadCap:dropDownBody>
-                <p>The following conversion table lists the supported data types:</p>
-                <table style="mc-table-style: url('../../../Web/SQream/Content/Resources/Table Styles/DefaultTable.css');" class="TableStyle-DefaultTable" cellspacing="0">
-                    <thead>
-                        <tr class="TableStyle-DefaultTable-Head-Header1">
-                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
-                                <p>Parquet Data Type</p>
-                            </th>
-                            <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">
-                                <p>SQream Data Type</p>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="TableStyle-DefaultTable-Body-Body1">
-                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
-                                <p>BOOLEAN</p>
-                            </td>
-                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
-                                <p>BOOL</p>
-                            </td>
-                        </tr>
-                        <tr class="TableStyle-DefaultTable-Body-Body2">
-                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
-                                <p>INT32</p>
-                            </td>
-                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
-                                <p>INT</p>
-                            </td>
-                        </tr>
-                        <tr class="TableStyle-DefaultTable-Body-Body1">
-                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
-                                <p>INT64</p>
-                            </td>
-                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
-                                <p>BIGINT</p>
-                            </td>
-                        </tr>
-                        <tr class="TableStyle-DefaultTable-Body-Body2">
-                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
-                                <p>FLOAT</p>
-                            </td>
-                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
-                                <p>REAL</p>
-                            </td>
-                        </tr>
-                        <tr class="TableStyle-DefaultTable-Body-Body1">
-                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
-                                <p>DOUBLE</p>
-                            </td>
-                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
-                                <p>DOUBLE</p>
-                            </td>
-                        </tr>
-                        <tr class="TableStyle-DefaultTable-Body-Body2">
-                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
-                                <p>BYTE_ARRAY</p>
-                            </td>
-                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
-                                <p>(N)VARCHAR</p>
-                            </td>
-                        </tr>
-                        <tr class="TableStyle-DefaultTable-Body-Body1">
-                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
-                                <p>DATE</p>
-                            </td>
-                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
-                                <p>DATE</p>
-                            </td>
-                        </tr>
-                        <tr class="TableStyle-DefaultTable-Body-Body2">
-                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
-                                <p>TIMESTAMP_MILLIS</p>
-                            </td>
-                            <td class="TableStyle-DefaultTable-BodyA-Column1-Body2">
-                                <p>DATETIME</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </MadCap:dropDownBody>
-        </MadCap:dropDown>
-        <h2>Performance considerations:</h2>
-        <MadCap:dropDown>
-            <MadCap:dropDownHead>
-                <MadCap:dropDownHotspot>
-                    <h3>When should I use VARCHAR? And when NVARCHAR? </h3>
-                </MadCap:dropDownHotspot>
-            </MadCap:dropDownHead>
-            <MadCap:dropDownBody>
-                <p>NVARCHAR is a UTF8, variable-length string data type. We recommend choosing it for strings that exceed 16 bytes. Note that 16 bytes in UTF8 might be shorter than 16 characters in most languages. </p>
-                <div class="note">
-                    <p>Only NVARCHAR supports non-ASCII characters. </p>
-                </div>
-                <p>In version 2019.2, there are some restrictions on NVARCHAR data type that need to be considered. The full list can be found in the <a href="../../../Web/SQream/Content/SQL_Reference_Guide/21_2.6_Data_types.htm#Data_types_..431">data type</a> chapter in the SQL Reference Guide. </p>
-            </MadCap:dropDownBody>
-        </MadCap:dropDown>
-        <MadCap:dropDown>
-            <MadCap:dropDownHead>
-                <MadCap:dropDownHotspot>
-                    <h3>Which compression algorithm should I choose?&#160;&#160; </h3>
-                </MadCap:dropDownHotspot>
-            </MadCap:dropDownHead>
-            <MadCap:dropDownBody>
-                <p>SQream uses the power and speed of the GPU to choose the best compression type per column, per bulk of data. We call this Adaptive Compression. </p>
-                <p>To take advantage of this optimized compression, we highly recommend that you do not specify the compression type manually and let SQream do its work. </p>
-            </MadCap:dropDownBody>
-        </MadCap:dropDown>
-        <MadCap:dropDown>
-            <MadCap:dropDownHead>
-                <MadCap:dropDownHotspot>
-                    <h3>How does SQream overcome the PCI bottleneck? &#160; </h3>
-                </MadCap:dropDownHotspot>
-            </MadCap:dropDownHead>
-            <MadCap:dropDownBody>
-                <p>In addition to using high-end technology, such as Nvidia NVLink, to maximize hardware utilization, SQream uses its own optimizations to overcome the bottleneck. These include: </p>
-                <ul style="list-style-type: disc;margin-left: 18pt;">
-                    <li style="list-style-type: disc;">Passing compressed data </li>
-                    <li style="list-style-type: disc;">Reducing the data that passes over the PCI to the minimum by moving only required data to the GPU (after column/chunk skipping) and also moving that data in stages. </li>
-                </ul>
-            </MadCap:dropDownBody>
-        </MadCap:dropDown>
+        <div class="mc-flowchart">
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>What version of ANSI SQL does SQream support?</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>SQream is mostly based on ANSI 92. </p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Which functions are supported?</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>A full listing of the supported functions can be found in the <a href="../../../Web/SQream/Content/SQL_Reference_Guide/1_Overview.htm">SQream SQL Reference Guide</a>.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Does SQREAM support the UPDATE command?</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>Currently, SQream does not support the UPDATE command since it would have limited usefulness in the SQream context. SQream is used mainly to load and analyze data, and then once the data is no longer needed, to remove/delete it. </p>
+                    <p>We offer our customers the ability to track all changes (as opposed to simply storing only the latest status). You can also easily retrieve either all changes (to find data changes) or just the most recent/ most up-to-date change (for the current status). </p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <h2>Architecture</h2>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Can SQream be containerized? Is it easy to do?</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>SQream DB software can run inside Docker containers.</p>
+                    <p>SQream cluster storage (the data itself) should be persistent and external to the container in a shared storage device.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>What maintenance is required for the SQream DB?</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>The only maintenance that you need to perform in SQream is to physically delete rows that were already logically deleted via the <a href="http://docs.sqream.com/latest/manual/Content/SQL_Reference_Guide/17_2.2_Data_Manipulation_Language.htm#DELETE_..460?TocPath=SQream%20DB%20%20SQL%20Reference%20Guide|Data%20Manipulation%20Language|_____5">DELETE</a> command (drop partition).</p>
+                    <p>Ease-of-use is one of the most important features of SQream! Our technology was developed specifically to avoid the time-consuming maintenance operations that are typically necessary with traditional databases.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>How do I backup SQream DB?</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>The SQream DB is always synced on disk. You should backup SQream storage with a snapshot-equivalent methodology. You can do the backup online if your tool supports instant backup. </p>
+                    <p>If no instant backup tool/software exists, the backup should be done while all SQream instances are down. </p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <h2>Connectivity</h2>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Which tools (like Tableau) can be integrated with the database? Is it native or is customization required?</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>Any visualization tools that can connect via SQream drivers (JDBC/ODBC etc.) can work with SQream. Please see the full drivers list <a href="../../../Web/SQream/Content/Drivers/Drivers.htm">here</a>. </p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Can SQream listen &amp; receive from Kafka as a Subscriber/Publisher?</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>In Kafka we have two relevant connectors:</p>
+                    <ul style="list-style-type: disc;margin-left: 18pt;">
+                        <li style="list-style-type: disc;">'source connector': writes into Kafka topics</li>
+                        <li style="list-style-type: disc;">'sink connector':&#160; reads from Kafka topics</li>
+                    </ul>
+                    <p>Currently SQream uses the Confluent JDBC sink/source connectors to read/write topics via our JDBC driver and writing them into SQream. </p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>What data types are supported in a Parquet external table?</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>The following conversion table lists the supported data types:</p>
+                    <table style="mc-table-style: url('../../../Web/SQream/Content/Resources/Table Styles/DefaultTable.css');" class="TableStyle-DefaultTable" cellspacing="0">
+                        <thead>
+                            <tr class="TableStyle-DefaultTable-Head-Header1">
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                                    <p>Parquet Data Type</p>
+                                </th>
+                                <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">
+                                    <p>SQream Data Type</p>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="TableStyle-DefaultTable-Body-Body1">
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p>BOOLEAN</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                    <p>BOOL</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-DefaultTable-Body-Body2">
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                                    <p>INT32</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                                    <p>INT</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-DefaultTable-Body-Body1">
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p>INT64</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                    <p>BIGINT</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-DefaultTable-Body-Body2">
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                                    <p>FLOAT</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                                    <p>REAL</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-DefaultTable-Body-Body1">
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p>DOUBLE</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                    <p>DOUBLE</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-DefaultTable-Body-Body2">
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                                    <p>BYTE_ARRAY</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                                    <p>(N)VARCHAR</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-DefaultTable-Body-Body1">
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p>DATE</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                    <p>DATE</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-DefaultTable-Body-Body2">
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                    <p>TIMESTAMP_MILLIS</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyA-Column1-Body2">
+                                    <p>DATETIME</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <h2>Performance considerations:</h2>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>When should I use VARCHAR? And when NVARCHAR? </MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>NVARCHAR is a UTF8, variable-length string data type. We recommend choosing it for strings that exceed 16 bytes. Note that 16 bytes in UTF8 might be shorter than 16 characters in most languages. </p>
+                    <div class="note">
+                        <p>Only NVARCHAR supports non-ASCII characters. </p>
+                    </div>
+                    <p>In version 2019.2, there are some restrictions on NVARCHAR data type that need to be considered. The full list can be found in the <a href="../../../Web/SQream/Content/SQL_Reference_Guide/21_2.6_Data_types.htm#Data_types_..431">data type</a> chapter in the SQL Reference Guide. </p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Which compression algorithm should I choose?&#160;&#160; </MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>SQream uses the power and speed of the GPU to choose the best compression type per column, per bulk of data. We call this Adaptive Compression. </p>
+                    <p>To take advantage of this optimized compression, we highly recommend that you do not specify the compression type manually and let SQream do its work. </p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>How does SQream overcome the PCI bottleneck? &#160; </MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>In addition to using high-end technology, such as Nvidia NVLink, to maximize hardware utilization, SQream uses its own optimizations to overcome the bottleneck. These include: </p>
+                    <ul style="list-style-type: disc;margin-left: 18pt;">
+                        <li style="list-style-type: disc;">Passing compressed data </li>
+                        <li style="list-style-type: disc;">Reducing the data that passes over the PCI to the minimum by moving only required data to the GPU (after column/chunk skipping) and also moving that data in stages. </li>
+                    </ul>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+        </div>
     </body>
 </html>
